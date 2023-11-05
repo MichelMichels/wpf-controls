@@ -1,0 +1,77 @@
+﻿<Window
+    x:Class="MichelsMichels.Controls.Demo.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:MichelsMichels.Controls.Demo"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:wpf="clr-namespace:MichelMichels.Controls;assembly=MichelMichels.Controls"
+    Title="MainWindow"
+    d:DataContext="{d:DesignInstance Type={x:Type local:MainViewModel}}"
+    d:DesignHeight="1080"
+    d:DesignWidth="1920"
+    SnapsToDevicePixels="True"
+    WindowState="Maximized"
+    mc:Ignorable="d">
+    <DockPanel>
+        <Border Padding="16" DockPanel.Dock="Top">
+            <TextBlock
+                FontSize="24"
+                FontWeight="Bold"
+                Text="MichelMichels.Controls" />
+        </Border>
+
+        <Separator
+            Height="1"
+            Background="LightGray"
+            DockPanel.Dock="Top" />
+
+        <ScrollViewer VerticalScrollBarVisibility="Visible">
+            <Border Padding="16">
+                <StackPanel>
+                    <TextBlock
+                        Margin="0,0,0,16"
+                        FontSize="18"
+                        Text="AnimatedImage" />
+
+                    <Grid Margin="0,0,0,32">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition />
+                            <ColumnDefinition Width="16" />
+                            <ColumnDefinition />
+                            <ColumnDefinition Width="16" />
+                            <ColumnDefinition />
+                        </Grid.ColumnDefinitions>
+
+
+                        <wpf:AnimatedImage
+                            Height="200"
+                            CornerRadius="8"
+                            Path="{Binding ImagePath}" />
+                    </Grid>
+
+                    <TextBlock
+                        Margin="0,0,0,16"
+                        FontSize="18"
+                        Text="Placeholder" />
+
+                    <wpf:Placeholder Height="100" Margin="0,0,0,16" />
+
+                    <Grid Height="100">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition />
+                            <ColumnDefinition Width="16" />
+                            <ColumnDefinition />
+                            <ColumnDefinition Width="16" />
+                            <ColumnDefinition />
+                        </Grid.ColumnDefinitions>
+
+                        <wpf:Placeholder Grid.Column="0" Grid.ColumnSpan="3" />
+                        <wpf:Placeholder Grid.Column="4" />
+                    </Grid>
+                </StackPanel>
+            </Border>
+
+        </ScrollViewer>
+    </DockPanel>
+</Window>
