@@ -1,6 +1,7 @@
 <a name="readme-top"></a>
 
 <!-- PROJECT SHIELDS -->
+[![Nuget](https://img.shields.io/nuget/v/MichelMichels.Controls)](https://www.nuget.org/packages/MichelMichels.Controls/)
 
 <!-- PROJECT LOGO -->
 <br />
@@ -12,7 +13,7 @@
 <h3 align="center">MichelMichels.Controls</h3>
 
   <p align="center">
-    Custom controls for WPF
+    Controls for WPF
     <br />
     <a href="https://github.com/MichelMichels/wpf-controls/issues/new?assignees=&labels=bug&projects=&title=">Report Bug</a>
     ·
@@ -35,7 +36,6 @@
     <li><a href="#contributing">Contributing</a></li>
     <li><a href="#license">License</a></li>
     <li><a href="#contact">Contact</a></li>
-    <li><a href="#previous">Previous repository</a></li>
   </ol>
 </details>
 
