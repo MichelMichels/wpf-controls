@@ -44,7 +44,7 @@
                         </Grid.ColumnDefinitions>
 
 
-                        <wpf:AnimatedImage
+                        <wpf:PlaceholderImage
                             Height="200"
                             CornerRadius="8"
                             Path="{Binding ImagePath}" />

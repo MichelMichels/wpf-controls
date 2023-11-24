@@ -11,14 +11,14 @@ namespace MichelMichels.Controls;
 
 [TemplatePart(Name = "PART_ImageBrush", Type = typeof(ImageBrush))]
 [TemplatePart(Name = "PART_Placeholder", Type = typeof(Placeholder))]
-public class AnimatedImage : Control
+public class PlaceholderImage : Control
 {
     private ImageBrush? imageBrush;
     private Placeholder? placeholder;
 
-    static AnimatedImage()
+    static PlaceholderImage()
     {
-        DefaultStyleKeyProperty.OverrideMetadata(typeof(AnimatedImage), new FrameworkPropertyMetadata(typeof(AnimatedImage)));
+        DefaultStyleKeyProperty.OverrideMetadata(typeof(PlaceholderImage), new FrameworkPropertyMetadata(typeof(PlaceholderImage)));
     }
 
     public override void OnApplyTemplate()
@@ -49,13 +49,13 @@ public class AnimatedImage : Control
 
     #region Static property backing fields
     public static readonly DependencyProperty StretchProperty =
-        DependencyProperty.Register("Stretch", typeof(Stretch), typeof(AnimatedImage), new PropertyMetadata(Stretch.UniformToFill, new PropertyChangedCallback(OnStretchChanged), new CoerceValueCallback(CoerceStretch)));
+        DependencyProperty.Register("Stretch", typeof(Stretch), typeof(PlaceholderImage), new PropertyMetadata(Stretch.UniformToFill, new PropertyChangedCallback(OnStretchChanged), new CoerceValueCallback(CoerceStretch)));
 
     public static readonly DependencyProperty CornerRadiusProperty =
-        DependencyProperty.Register("CornerRadius", typeof(CornerRadius), typeof(AnimatedImage), new PropertyMetadata(new CornerRadius(0)));
+        DependencyProperty.Register("CornerRadius", typeof(CornerRadius), typeof(PlaceholderImage), new PropertyMetadata(new CornerRadius(0)));
 
     public static readonly DependencyProperty PathProperty =
-        DependencyProperty.Register("Path", typeof(string), typeof(AnimatedImage), new PropertyMetadata(string.Empty, new PropertyChangedCallback(OnPathChanged), new CoerceValueCallback(CoercePath)));
+        DependencyProperty.Register("Path", typeof(string), typeof(PlaceholderImage), new PropertyMetadata(string.Empty, new PropertyChangedCallback(OnPathChanged), new CoerceValueCallback(CoercePath)));
     #endregion
 
     private static object CoercePath(DependencyObject d, object value)
@@ -66,9 +66,9 @@ public class AnimatedImage : Control
 
     private static async void OnPathChanged(DependencyObject obj, DependencyPropertyChangedEventArgs args)
     {
-        if (obj is not AnimatedImage animatedImage)
+        if (obj is not PlaceholderImage animatedImage)
         {
-            Debug.WriteLine($"{nameof(obj)} is not a type of {nameof(AnimatedImage)}");
+            Debug.WriteLine($"{nameof(obj)} is not a type of {nameof(PlaceholderImage)}");
             return;
         }
 
@@ -144,7 +144,7 @@ public class AnimatedImage : Control
         name: "ImageLoaded",
         routingStrategy: RoutingStrategy.Bubble,
         handlerType: typeof(RoutedEventHandler),
-        ownerType: typeof(AnimatedImage));
+        ownerType: typeof(PlaceholderImage));
 
     public event RoutedEventHandler ImageLoaded
     {
@@ -156,7 +156,7 @@ public class AnimatedImage : Control
         name: "ImageLoading",
         routingStrategy: RoutingStrategy.Bubble,
         handlerType: typeof(RoutedEventHandler),
-        ownerType: typeof(AnimatedImage));
+        ownerType: typeof(PlaceholderImage));
 
     public event RoutedEventHandler ImageLoading
     {
