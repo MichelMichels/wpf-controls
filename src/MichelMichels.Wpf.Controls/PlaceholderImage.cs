@@ -1,72 +1,94 @@
-﻿using System;
+﻿using MichelMichels.Wpf.Controls.Resources;
+using System;
 using System.Diagnostics;
 using System.IO;
 using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 
 namespace MichelMichels.Wpf.Controls;
 
-[TemplatePart(Name = "PART_ImageBrush", Type = typeof(ImageBrush))]
-[TemplatePart(Name = "PART_Placeholder", Type = typeof(Placeholder))]
-public class PlaceholderImage : Control
+[TemplatePart(Name = Part.ImageBrush, Type = typeof(ImageBrush))]
+[TemplatePart(Name = Part.Placeholder, Type = typeof(Placeholder))]
+public class PlaceholderImage : BaseControl
 {
-    private ImageBrush? imageBrush;
-    private Placeholder? placeholder;
+    public static readonly DependencyProperty StretchProperty = DependencyProperty.Register(
+        nameof(Stretch),
+        typeof(Stretch),
+        typeof(PlaceholderImage),
+        new PropertyMetadata(Stretch.UniformToFill));
+
+    public static readonly DependencyProperty CornerRadiusProperty = DependencyProperty.Register(
+        nameof(CornerRadius),
+        typeof(CornerRadius),
+        typeof(PlaceholderImage),
+        new PropertyMetadata(new CornerRadius(0)));
+
+    public static readonly DependencyProperty PathProperty = DependencyProperty.Register(
+        nameof(Path),
+        typeof(string),
+        typeof(PlaceholderImage),
+        new PropertyMetadata(string.Empty, new PropertyChangedCallback(OnPathChanged)));
+
+    public static readonly RoutedEvent ImageLoadedEvent = EventManager.RegisterRoutedEvent(
+        nameof(ImageLoaded),
+        RoutingStrategy.Bubble,
+        typeof(RoutedEventHandler),
+        typeof(PlaceholderImage));
+
+    public static readonly RoutedEvent ImageLoadingEvent = EventManager.RegisterRoutedEvent(
+       nameof(ImageLoading),
+       RoutingStrategy.Bubble,
+       typeof(RoutedEventHandler),
+       typeof(PlaceholderImage));
+
+    private ImageBrush? _imageBrush;
+    private Placeholder? _placeholder;
 
     static PlaceholderImage()
     {
-        DefaultStyleKeyProperty.OverrideMetadata(typeof(PlaceholderImage), new FrameworkPropertyMetadata(typeof(PlaceholderImage)));
+        DefaultStyleKeyProperty.OverrideMetadata(typeof(PlaceholderImage),
+            new FrameworkPropertyMetadata(typeof(PlaceholderImage)));
     }
 
     public override void OnApplyTemplate()
     {
-        imageBrush = GetTemplateChild("PART_ImageBrush") as ImageBrush;
-        placeholder = GetTemplateChild("PART_Placeholder") as Placeholder;
+        TryGetTemplateChild(Part.ImageBrush, out _imageBrush);
+        TryGetTemplateChild(Part.Placeholder, out _placeholder);
 
         base.OnApplyTemplate();
     }
 
-    #region Properties
     public Stretch Stretch
     {
-        get { return (Stretch)GetValue(StretchProperty); }
-        set { SetValue(StretchProperty, value); }
+        get => (Stretch)GetValue(StretchProperty);
+        set => SetValue(StretchProperty, value);
     }
     public string Path
     {
-        get { return (string)GetValue(PathProperty); }
-        set { SetValue(PathProperty, value); }
+        get => (string)GetValue(PathProperty);
+        set => SetValue(PathProperty, value);
     }
     public CornerRadius CornerRadius
     {
-        get { return (CornerRadius)GetValue(CornerRadiusProperty); }
-        set { SetValue(CornerRadiusProperty, value); }
+        get => (CornerRadius)GetValue(CornerRadiusProperty);
+        set => SetValue(CornerRadiusProperty, value);
     }
-    #endregion
-
-    #region Static property backing fields
-    public static readonly DependencyProperty StretchProperty =
-        DependencyProperty.Register("Stretch", typeof(Stretch), typeof(PlaceholderImage), new PropertyMetadata(Stretch.UniformToFill, new PropertyChangedCallback(OnStretchChanged), new CoerceValueCallback(CoerceStretch)));
-
-    public static readonly DependencyProperty CornerRadiusProperty =
-        DependencyProperty.Register("CornerRadius", typeof(CornerRadius), typeof(PlaceholderImage), new PropertyMetadata(new CornerRadius(0)));
-
-    public static readonly DependencyProperty PathProperty =
-        DependencyProperty.Register("Path", typeof(string), typeof(PlaceholderImage), new PropertyMetadata(string.Empty, new PropertyChangedCallback(OnPathChanged), new CoerceValueCallback(CoercePath)));
-    #endregion
-
-    private static object CoercePath(DependencyObject d, object value)
+    public event RoutedEventHandler ImageLoaded
     {
-        Debug.WriteLine($"{nameof(CoercePath)}: {value}");
-        return value;
+        add => AddHandler(ImageLoadedEvent, value);
+        remove => RemoveHandler(ImageLoadedEvent, value);
+    }
+    public event RoutedEventHandler ImageLoading
+    {
+        add => AddHandler(ImageLoadingEvent, value);
+        remove => RemoveHandler(ImageLoadingEvent, value);
     }
 
     private static async void OnPathChanged(DependencyObject obj, DependencyPropertyChangedEventArgs args)
     {
-        if (obj is not PlaceholderImage animatedImage)
+        if (obj is not PlaceholderImage placeholderImage)
         {
             Debug.WriteLine($"{nameof(obj)} is not a type of {nameof(PlaceholderImage)}");
             return;
@@ -93,7 +115,7 @@ public class PlaceholderImage : Control
         try
         {
             RoutedEventArgs imageLoadingArgs = new(ImageLoadingEvent);
-            animatedImage.RaiseEvent(imageLoadingArgs);
+            placeholderImage.RaiseEvent(imageLoadingArgs);
 
             if (!Uri.TryCreate(newPath, UriKind.Absolute, out _))
             {
@@ -104,12 +126,12 @@ public class PlaceholderImage : Control
             await Task.Delay(500);
 
             imageLoadingArgs.Handled = true;
-            animatedImage.RaiseEvent(new RoutedEventArgs(ImageLoadedEvent));
+            placeholderImage.RaiseEvent(new RoutedEventArgs(ImageLoadedEvent));
 
-            if (animatedImage.imageBrush != null)
+            if (placeholderImage._imageBrush != null)
             {
-                animatedImage.imageBrush.Stretch = animatedImage.Stretch;
-                animatedImage.imageBrush.ImageSource = picture;
+                placeholderImage._imageBrush.Stretch = placeholderImage.Stretch;
+                placeholderImage._imageBrush.ImageSource = picture;
             }
         }
         catch (UriFormatException)
@@ -124,43 +146,5 @@ public class PlaceholderImage : Control
         {
             Debug.WriteLine("File not supported.");
         }
-        finally
-        {
-        }
-    }
-
-    private static object CoerceStretch(DependencyObject d, object value)
-    {
-        Debug.WriteLine($"{nameof(CoerceStretch)}: {value}");
-        return value;
-    }
-
-    private static void OnStretchChanged(DependencyObject obj, DependencyPropertyChangedEventArgs args)
-    {
-        Debug.WriteLine($"{nameof(OnStretchChanged)}: {args.OldValue} -> {args.NewValue}");
-    }
-
-    public static readonly RoutedEvent ImageLoadedEvent = EventManager.RegisterRoutedEvent(
-        name: "ImageLoaded",
-        routingStrategy: RoutingStrategy.Bubble,
-        handlerType: typeof(RoutedEventHandler),
-        ownerType: typeof(PlaceholderImage));
-
-    public event RoutedEventHandler ImageLoaded
-    {
-        add { AddHandler(ImageLoadedEvent, value); }
-        remove { RemoveHandler(ImageLoadedEvent, value); }
-    }
-
-    public static readonly RoutedEvent ImageLoadingEvent = EventManager.RegisterRoutedEvent(
-        name: "ImageLoading",
-        routingStrategy: RoutingStrategy.Bubble,
-        handlerType: typeof(RoutedEventHandler),
-        ownerType: typeof(PlaceholderImage));
-
-    public event RoutedEventHandler ImageLoading
-    {
-        add { AddHandler(ImageLoadingEvent, value); }
-        remove { RemoveHandler(ImageLoadingEvent, value); }
     }
 }
