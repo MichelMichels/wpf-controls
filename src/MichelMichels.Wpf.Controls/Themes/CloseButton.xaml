@@ -23,4 +23,15 @@
         <Setter Property="MouseOverBackground" Value="{StaticResource Button.MouseOver.Close.BackgroundBrush}" />
         <Setter Property="PressedBackground" Value="{StaticResource Button.Pressed.Close.BackgroundBrush}" />
     </Style>
+
+    <Style
+        x:Key="CloseButton.Windows11"
+        BasedOn="{StaticResource BaseCloseButton}"
+        TargetType="local:CloseButton">
+        <Setter Property="Content">
+            <Setter.Value>
+                <TextBlock FontFamily="Segoe Fluent Icons" Text="&#xE8BB;" />
+            </Setter.Value>
+        </Setter>
+    </Style>
 </ResourceDictionary>

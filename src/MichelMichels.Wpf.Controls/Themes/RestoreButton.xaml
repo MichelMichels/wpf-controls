@@ -21,4 +21,14 @@
             </Setter.Value>
         </Setter>
     </Style>
+    <Style
+        x:Key="RestoreButton.Windows11"
+        BasedOn="{StaticResource BaseTitlebarButton}"
+        TargetType="local:RestoreButton">
+        <Setter Property="Content">
+            <Setter.Value>
+                <TextBlock FontFamily="Segoe Fluent Icons" Text="&#xE923;" />
+            </Setter.Value>
+        </Setter>
+    </Style>
 </ResourceDictionary>

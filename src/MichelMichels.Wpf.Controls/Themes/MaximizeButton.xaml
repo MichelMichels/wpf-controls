@@ -21,4 +21,14 @@
             </Setter.Value>
         </Setter>
     </Style>
+    <Style
+        x:Key="Maximize.Windows11"
+        BasedOn="{StaticResource BaseTitlebarButton}"
+        TargetType="local:MaximizeButton">
+        <Setter Property="Content">
+            <Setter.Value>
+                <TextBlock FontFamily="Segoe Fluent Icons" Text="&#xE922;" />
+            </Setter.Value>
+        </Setter>
+    </Style>
 </ResourceDictionary>

@@ -86,7 +86,7 @@
                                 Margin="0,0,0,16"
                                 FontSize="18"
                                 Text="MinimizeButton" />
-                            <wpf:MinimizeButton Height="32" />
+                            <wpf:MinimizeButton Height="32" Style="{StaticResource MinimizeButton.Windows11}" />
                         </StackPanel>
 
                         <StackPanel Margin="0,0,16,0">
@@ -94,7 +94,7 @@
                                 Margin="0,0,0,16"
                                 FontSize="18"
                                 Text="MaximizeButton" />
-                            <wpf:MaximizeButton Height="32" />
+                            <wpf:MaximizeButton Height="32" Style="{StaticResource Maximize.Windows11}" />
                         </StackPanel>
 
                         <StackPanel Margin="0,0,16,0">
@@ -102,7 +102,7 @@
                                 Margin="0,0,0,16"
                                 FontSize="18"
                                 Text="RestoreButton" />
-                            <wpf:RestoreButton Height="32" />
+                            <wpf:RestoreButton Height="32" Style="{StaticResource RestoreButton.Windows11}" />
                         </StackPanel>
 
                         <StackPanel Margin="0,0,16,0">
@@ -110,7 +110,7 @@
                                 Margin="0,0,0,16"
                                 FontSize="18"
                                 Text="CloseButton" />
-                            <wpf:CloseButton Height="32" />
+                            <wpf:CloseButton Height="32" Style="{StaticResource CloseButton.Windows11}" />
                         </StackPanel>
                     </StackPanel>
 

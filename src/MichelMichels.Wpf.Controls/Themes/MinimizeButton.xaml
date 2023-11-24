@@ -21,4 +21,14 @@
             </Setter.Value>
         </Setter>
     </Style>
+    <Style
+        x:Key="MinimizeButton.Windows11"
+        BasedOn="{StaticResource BaseTitlebarButton}"
+        TargetType="local:MinimizeButton">
+        <Setter Property="Content">
+            <Setter.Value>
+                <TextBlock FontFamily="Segoe Fluent Icons" Text="&#xE921;" />
+            </Setter.Value>
+        </Setter>
+    </Style>
 </ResourceDictionary>
