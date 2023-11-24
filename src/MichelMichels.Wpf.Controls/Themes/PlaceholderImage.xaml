@@ -1,0 +1,46 @@
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="clr-namespace:MichelMichels.Wpf.Controls">
+    <ControlTemplate x:Key="PlaceholderImageTemplate" TargetType="local:PlaceholderImage">
+        <Grid>
+            <Border x:Name="PART_BackgroundElement" CornerRadius="{TemplateBinding CornerRadius}" />
+
+            <Border x:Name="PART_ImageElement" CornerRadius="{TemplateBinding CornerRadius}">
+                <Border.Background>
+                    <ImageBrush x:Name="PART_ImageBrush" />
+                </Border.Background>
+            </Border>
+
+            <local:Placeholder
+                x:Name="PART_Placeholder"
+                CornerRadius="{TemplateBinding CornerRadius}"
+                Opacity="1" />
+        </Grid>
+
+        <ControlTemplate.Triggers>
+            <EventTrigger RoutedEvent="local:PlaceholderImage.ImageLoaded">
+                <BeginStoryboard>
+                    <Storyboard>
+                        <DoubleAnimation
+                            AutoReverse="False"
+                            Storyboard.TargetName="PART_Placeholder"
+                            Storyboard.TargetProperty="Opacity"
+                            From="1"
+                            To="0"
+                            Duration="0:0:1.25">
+                            <DoubleAnimation.EasingFunction>
+                                <CubicEase />
+                            </DoubleAnimation.EasingFunction>
+                        </DoubleAnimation>
+                    </Storyboard>
+                </BeginStoryboard>
+            </EventTrigger>
+        </ControlTemplate.Triggers>
+    </ControlTemplate>
+
+    <Style x:Key="BasePlaceholderImage" TargetType="{x:Type local:PlaceholderImage}">
+        <Setter Property="Stretch" Value="UniformToFill" />
+        <Setter Property="Template" Value="{StaticResource PlaceholderImageTemplate}" />
+    </Style>
+</ResourceDictionary>

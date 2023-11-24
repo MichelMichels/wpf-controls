@@ -1,48 +1,11 @@
-<ResourceDictionary
+﻿<ResourceDictionary
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:local="clr-namespace:MichelMichels.Controls">
-    <!--  Control templates  -->
-    <ControlTemplate x:Key="AnimatedImageTemplate" TargetType="local:AnimatedImage">
-        <Grid>
-            <Border x:Name="PART_BackgroundElement" CornerRadius="{TemplateBinding CornerRadius}" />
-
-            <Border x:Name="PART_ImageElement" CornerRadius="{TemplateBinding CornerRadius}">
-                <Border.Background>
-                    <ImageBrush x:Name="PART_ImageBrush" />
-                </Border.Background>
-            </Border>
-
-            <local:Placeholder
-                x:Name="PART_Placeholder"
-                CornerRadius="{TemplateBinding CornerRadius}"
-                Opacity="1" />
-        </Grid>
-
-        <ControlTemplate.Triggers>
-            <EventTrigger RoutedEvent="local:AnimatedImage.ImageLoaded">
-                <BeginStoryboard>
-                    <Storyboard>
-                        <DoubleAnimation
-                            AutoReverse="False"
-                            Storyboard.TargetName="PART_Placeholder"
-                            Storyboard.TargetProperty="Opacity"
-                            From="1"
-                            To="0"
-                            Duration="0:0:1.25">
-                            <DoubleAnimation.EasingFunction>
-                                <CubicEase />
-                            </DoubleAnimation.EasingFunction>
-                        </DoubleAnimation>
-                    </Storyboard>
-                </BeginStoryboard>
-            </EventTrigger>
-        </ControlTemplate.Triggers>
-    </ControlTemplate>
+    xmlns:local="clr-namespace:MichelMichels.Wpf.Controls">
     <ControlTemplate x:Key="PlaceholderTemplate" TargetType="local:Placeholder">
         <Border x:Name="PART_LoadingElement" CornerRadius="{TemplateBinding CornerRadius}">
             <Border.Background>
-                <LinearGradientBrush x:Name="PART_LoadingElement_GradientBrush" MappingMode="Absolute">
+                <LinearGradientBrush x:Name="PART_LoadingGradientBrush" MappingMode="Absolute">
                     <LinearGradientBrush.StartPoint>
                         <Point X="0" Y="50" />
                     </LinearGradientBrush.StartPoint>
@@ -90,12 +53,7 @@
         </ControlTemplate.Triggers>
     </ControlTemplate>
 
-    <!--  Styles  -->
-    <Style TargetType="{x:Type local:AnimatedImage}">
-        <Setter Property="Stretch" Value="UniformToFill" />
-        <Setter Property="Template" Value="{StaticResource AnimatedImageTemplate}" />
-    </Style>
-    <Style TargetType="{x:Type local:Placeholder}">
+    <Style x:Key="BasePlaceholder" TargetType="{x:Type local:Placeholder}">
         <Setter Property="Template" Value="{StaticResource PlaceholderTemplate}" />
         <Setter Property="CornerRadius" Value="8" />
     </Style>
