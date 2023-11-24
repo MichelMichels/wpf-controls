@@ -10,7 +10,7 @@
     <img src="assets/demo.gif" alt="Demo gif" width="500">
   </a>
 
-<h3 align="center">MichelMichels.Controls</h3>
+<h3 align="center">MichelMichels.Wpf.Controls</h3>
 
   <p align="center">
     Controls for WPF
@@ -57,7 +57,7 @@ Clone the repository, build and run one of the projects.
    git clone https://github.com/MichelMichels/wpf-controls.git
    ```
 2. Open VS
-3. Open the `MichelMichels.Controls` solution file.
+3. Open the `MichelMichels.Wpf.Controls.sln` solution file.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
