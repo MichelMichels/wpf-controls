@@ -4,7 +4,7 @@ using System.Windows.Media;
 
 namespace MichelMichels.Controls;
 
-[TemplatePart(Name = "PART_LoadingElement_GradientBrush", Type = typeof(LinearGradientBrush))]
+[TemplatePart(Name = "PART_LoadingGradientBrush", Type = typeof(LinearGradientBrush))]
 public class Placeholder : Control
 {
     private LinearGradientBrush? brush;
