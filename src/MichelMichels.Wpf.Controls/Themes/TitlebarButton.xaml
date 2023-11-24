@@ -33,7 +33,7 @@
     </ControlTemplate>
 
     <Style x:Key="BaseTitlebarButton" TargetType="{x:Type local:TitlebarButton}">
-        <Setter Property="RenderOptions.EdgeMode" Value="Aliased" />
+        <Setter Property="RenderOptions.EdgeMode" Value="Unspecified" />
         <Setter Property="MouseOverBackgroundBrush" Value="{StaticResource MouseOverOverlayBackgroundBrush}" />
         <Setter Property="PressedBackgroundBrush" Value="{StaticResource PressedOverlayBackgroundBrush}" />
         <Setter Property="Foreground" Value="{StaticResource WindowTextBrush}" />

@@ -70,16 +70,26 @@
                         <wpf:Placeholder Grid.Column="4" />
                     </Grid>
 
-                    <TextBlock
-                        Margin="0,0,0,16"
-                        FontSize="18"
-                        Text="TitlebarButton" />
+                    <StackPanel Orientation="Horizontal">
+                        <StackPanel Margin="0,0,16,0">
+                            <TextBlock
+                                Margin="0,0,0,16"
+                                FontSize="18"
+                                Text="TitlebarButton" />
+                            <wpf:TitlebarButton Height="32">
+                                <TextBlock Text="A" />
+                            </wpf:TitlebarButton>
+                        </StackPanel>
 
-                    <StackPanel Height="32" Orientation="Horizontal">
-                        <wpf:TitlebarButton>
-                            <TextBlock Text="A" />
-                        </wpf:TitlebarButton>
+                        <StackPanel>
+                            <TextBlock
+                                Margin="0,0,0,16"
+                                FontSize="18"
+                                Text="MinimizeButton" />
+                            <wpf:MinimizeButton Height="32" />
+                        </StackPanel>
                     </StackPanel>
+
                 </StackPanel>
             </Border>
 
