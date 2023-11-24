@@ -81,7 +81,7 @@
                             </wpf:TitlebarButton>
                         </StackPanel>
 
-                        <StackPanel>
+                        <StackPanel Margin="0,0,16,0">
                             <TextBlock
                                 Margin="0,0,0,16"
                                 FontSize="18"
@@ -89,7 +89,7 @@
                             <wpf:MinimizeButton Height="32" />
                         </StackPanel>
 
-                        <StackPanel>
+                        <StackPanel Margin="0,0,16,0">
                             <TextBlock
                                 Margin="0,0,0,16"
                                 FontSize="18"
@@ -97,7 +97,7 @@
                             <wpf:MaximizeButton Height="32" />
                         </StackPanel>
 
-                        <StackPanel>
+                        <StackPanel Margin="0,0,16,0">
                             <TextBlock
                                 Margin="0,0,0,16"
                                 FontSize="18"
@@ -105,7 +105,7 @@
                             <wpf:RestoreButton Height="32" />
                         </StackPanel>
 
-                        <StackPanel>
+                        <StackPanel Margin="0,0,16,0">
                             <TextBlock
                                 Margin="0,0,0,16"
                                 FontSize="18"

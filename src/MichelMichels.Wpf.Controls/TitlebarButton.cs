@@ -6,14 +6,14 @@ namespace MichelMichels.Wpf.Controls;
 
 public class TitlebarButton : Button
 {
-    public static readonly DependencyProperty MouseOverBackgroundBrushProperty = DependencyProperty.Register(
-        nameof(MouseOverBackgroundBrush),
+    public static readonly DependencyProperty MouseOverBackgroundProperty = DependencyProperty.Register(
+        nameof(MouseOverBackground),
         typeof(Brush),
         typeof(TitlebarButton),
         new PropertyMetadata(new SolidColorBrush()));
 
-    public static readonly DependencyProperty PressedBackgroundBrushProperty = DependencyProperty.Register(
-        nameof(PressedBackgroundBrush),
+    public static readonly DependencyProperty PressedBackgroundProperty = DependencyProperty.Register(
+        nameof(PressedBackground),
         typeof(Brush),
         typeof(TitlebarButton),
         new PropertyMetadata(new SolidColorBrush()));
@@ -24,14 +24,14 @@ public class TitlebarButton : Button
             new FrameworkPropertyMetadata(typeof(TitlebarButton)));
     }
 
-    public Brush MouseOverBackgroundBrush
+    public Brush MouseOverBackground
     {
-        get => (Brush)GetValue(MouseOverBackgroundBrushProperty);
-        set => SetValue(MouseOverBackgroundBrushProperty, value);
+        get => (Brush)GetValue(MouseOverBackgroundProperty);
+        set => SetValue(MouseOverBackgroundProperty, value);
     }
-    public Brush PressedBackgroundBrush
+    public Brush PressedBackground
     {
-        get => (Brush)GetValue(PressedBackgroundBrushProperty);
-        set => SetValue(PressedBackgroundBrushProperty, value);
+        get => (Brush)GetValue(PressedBackgroundProperty);
+        set => SetValue(PressedBackgroundProperty, value);
     }
 }

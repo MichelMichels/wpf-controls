@@ -16,7 +16,7 @@
             <Setter.Value>
                 <Path
                     Data="{StaticResource Maximize}"
-                    Fill="{StaticResource WindowTextBrush}"
+                    Fill="{StaticResource Text.ForegroundBrush}"
                     StrokeThickness="0" />
             </Setter.Value>
         </Setter>

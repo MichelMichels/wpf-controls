@@ -16,11 +16,11 @@
             <Setter.Value>
                 <Path
                     Data="{StaticResource Close}"
-                    Fill="{StaticResource WindowTextBrush}"
+                    Fill="{StaticResource Text.ForegroundBrush}"
                     StrokeThickness="0" />
             </Setter.Value>
         </Setter>
-        <Setter Property="MouseOverBackgroundBrush" Value="{StaticResource MouseOverWindowCloseButtonBackgroundBrush}" />
-        <Setter Property="PressedBackgroundBrush" Value="{StaticResource PressedWindowCloseButtonBackgroundBrush}" />
+        <Setter Property="MouseOverBackground" Value="{StaticResource Button.MouseOver.Close.BackgroundBrush}" />
+        <Setter Property="PressedBackground" Value="{StaticResource Button.Pressed.Close.BackgroundBrush}" />
     </Style>
 </ResourceDictionary>
