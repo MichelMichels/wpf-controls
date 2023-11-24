@@ -5,8 +5,10 @@
     <ResourceDictionary.MergedDictionaries>
         <ResourceDictionary Source="pack://application:,,,/MichelMichels.Wpf.Controls;component/Themes/Placeholder.xaml" />
         <ResourceDictionary Source="pack://application:,,,/MichelMichels.Wpf.Controls;component/Themes/PlaceholderImage.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/MichelMichels.Wpf.Controls;component/Themes/TitlebarButton.xaml" />
     </ResourceDictionary.MergedDictionaries>
 
     <Style BasedOn="{StaticResource BasePlaceholder}" TargetType="local:Placeholder" />
     <Style BasedOn="{StaticResource BasePlaceholderImage}" TargetType="local:PlaceholderImage" />
+    <Style BasedOn="{StaticResource BaseTitlebarButton}" TargetType="local:TitlebarButton" />
 </ResourceDictionary>

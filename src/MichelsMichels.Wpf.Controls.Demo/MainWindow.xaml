@@ -57,7 +57,7 @@
 
                     <wpf:Placeholder Height="100" Margin="0,0,0,16" />
 
-                    <Grid Height="100">
+                    <Grid Height="100" Margin="0,0,0,32">
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition />
                             <ColumnDefinition Width="16" />
@@ -69,6 +69,17 @@
                         <wpf:Placeholder Grid.Column="0" Grid.ColumnSpan="3" />
                         <wpf:Placeholder Grid.Column="4" />
                     </Grid>
+
+                    <TextBlock
+                        Margin="0,0,0,16"
+                        FontSize="18"
+                        Text="TitlebarButton" />
+
+                    <StackPanel Height="32" Orientation="Horizontal">
+                        <wpf:TitlebarButton>
+                            <TextBlock Text="A" />
+                        </wpf:TitlebarButton>
+                    </StackPanel>
                 </StackPanel>
             </Border>
 
