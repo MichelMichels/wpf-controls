@@ -1,12 +1,11 @@
 ﻿using MichelMichels.Wpf.Controls.Resources;
 using System.Windows;
-using System.Windows.Controls;
 using System.Windows.Media;
 
 namespace MichelMichels.Wpf.Controls;
 
 [TemplatePart(Name = Part.LoadingGradientBrush, Type = typeof(LinearGradientBrush))]
-public class Placeholder : Control
+public class Placeholder : BaseControl
 {
     public static readonly DependencyProperty BackgroundColorProperty = DependencyProperty.Register(
         nameof(BackgroundColor),
@@ -30,14 +29,15 @@ public class Placeholder : Control
 
     static Placeholder()
     {
-        DefaultStyleKeyProperty.OverrideMetadata(typeof(Placeholder), new FrameworkPropertyMetadata(typeof(Placeholder)));
+        DefaultStyleKeyProperty.OverrideMetadata(typeof(Placeholder),
+            new FrameworkPropertyMetadata(typeof(Placeholder)));
     }
 
     public override void OnApplyTemplate()
     {
         Window.GetWindow(this).SizeChanged += Window_SizeChanged;
 
-        _brush = GetTemplateChild(Part.LoadingGradientBrush) as LinearGradientBrush;
+        TryGetTemplateChild(nameof(Part.LoadingGradientBrush), out _brush);
 
         base.OnApplyTemplate();
     }
