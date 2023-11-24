@@ -8,6 +8,7 @@
         <ResourceDictionary Source="pack://application:,,,/MichelMichels.Wpf.Controls;component/Themes/TitlebarButton.xaml" />
         <ResourceDictionary Source="pack://application:,,,/MichelMichels.Wpf.Controls;component/Themes/MinimizeButton.xaml" />
         <ResourceDictionary Source="pack://application:,,,/MichelMichels.Wpf.Controls;component/Themes/MaximizeButton.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/MichelMichels.Wpf.Controls;component/Themes/RestoreButton.xaml" />
     </ResourceDictionary.MergedDictionaries>
 
     <Style BasedOn="{StaticResource BasePlaceholder}" TargetType="local:Placeholder" />
@@ -15,4 +16,5 @@
     <Style BasedOn="{StaticResource BaseTitlebarButton}" TargetType="local:TitlebarButton" />
     <Style BasedOn="{StaticResource BaseMinimizeButton}" TargetType="local:MinimizeButton" />
     <Style BasedOn="{StaticResource BaseMaximizeButton}" TargetType="local:MaximizeButton" />
+    <Style BasedOn="{StaticResource BaseRestoreButton}" TargetType="local:RestoreButton" />
 </ResourceDictionary>

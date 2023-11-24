@@ -1,0 +1,26 @@
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="clr-namespace:MichelMichels.Wpf.Controls">
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="pack://application:,,,/MichelMichels.Wpf.Controls;component/Resources/Brushes.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/MichelMichels.Wpf.Controls;component/Resources/Paths.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/MichelMichels.Wpf.Controls;component/Themes/TitlebarButton.xaml" />
+    </ResourceDictionary.MergedDictionaries>
+
+    <ControlTemplate x:Key="RestoreButtonTemplate" TargetType="{x:Type local:RestoreButton}">
+        <local:TitlebarButton>
+            <Path
+                Data="{StaticResource Restore}"
+                Fill="{StaticResource WindowTextBrush}"
+                StrokeThickness="0" />
+        </local:TitlebarButton>
+    </ControlTemplate>
+
+    <Style
+        x:Key="BaseRestoreButton"
+        BasedOn="{StaticResource BaseTitlebarButton}"
+        TargetType="{x:Type local:RestoreButton}">
+        <Setter Property="Template" Value="{StaticResource RestoreButtonTemplate}" />
+    </Style>
+</ResourceDictionary>
