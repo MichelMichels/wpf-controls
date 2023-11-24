@@ -8,19 +8,17 @@
         <ResourceDictionary Source="pack://application:,,,/MichelMichels.Wpf.Controls;component/Themes/TitlebarButton.xaml" />
     </ResourceDictionary.MergedDictionaries>
 
-    <ControlTemplate x:Key="RestoreButtonTemplate" TargetType="{x:Type local:RestoreButton}">
-        <local:TitlebarButton>
-            <Path
-                Data="{StaticResource Restore}"
-                Fill="{StaticResource WindowTextBrush}"
-                StrokeThickness="0" />
-        </local:TitlebarButton>
-    </ControlTemplate>
-
     <Style
         x:Key="BaseRestoreButton"
         BasedOn="{StaticResource BaseTitlebarButton}"
         TargetType="{x:Type local:RestoreButton}">
-        <Setter Property="Template" Value="{StaticResource RestoreButtonTemplate}" />
+        <Setter Property="Content">
+            <Setter.Value>
+                <Path
+                    Data="{StaticResource Restore}"
+                    Fill="{StaticResource WindowTextBrush}"
+                    StrokeThickness="0" />
+            </Setter.Value>
+        </Setter>
     </Style>
 </ResourceDictionary>

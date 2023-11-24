@@ -2,4 +2,6 @@
     <SolidColorBrush x:Key="WindowTextBrush" Color="Black" />
     <SolidColorBrush x:Key="MouseOverOverlayBackgroundBrush" Color="#33000000" />
     <SolidColorBrush x:Key="PressedOverlayBackgroundBrush" Color="#44000000" />
+    <SolidColorBrush x:Key="MouseOverWindowCloseButtonBackgroundBrush" Color="#E81122" />
+    <SolidColorBrush x:Key="PressedWindowCloseButtonBackgroundBrush" Color="#F1707B" />
 </ResourceDictionary>

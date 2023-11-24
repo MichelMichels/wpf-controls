@@ -9,6 +9,7 @@
         <ResourceDictionary Source="pack://application:,,,/MichelMichels.Wpf.Controls;component/Themes/MinimizeButton.xaml" />
         <ResourceDictionary Source="pack://application:,,,/MichelMichels.Wpf.Controls;component/Themes/MaximizeButton.xaml" />
         <ResourceDictionary Source="pack://application:,,,/MichelMichels.Wpf.Controls;component/Themes/RestoreButton.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/MichelMichels.Wpf.Controls;component/Themes/CloseButton.xaml" />
     </ResourceDictionary.MergedDictionaries>
 
     <Style BasedOn="{StaticResource BasePlaceholder}" TargetType="local:Placeholder" />
@@ -17,4 +18,5 @@
     <Style BasedOn="{StaticResource BaseMinimizeButton}" TargetType="local:MinimizeButton" />
     <Style BasedOn="{StaticResource BaseMaximizeButton}" TargetType="local:MaximizeButton" />
     <Style BasedOn="{StaticResource BaseRestoreButton}" TargetType="local:RestoreButton" />
+    <Style BasedOn="{StaticResource BaseCloseButton}" TargetType="local:CloseButton" />
 </ResourceDictionary>

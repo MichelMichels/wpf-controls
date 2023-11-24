@@ -104,6 +104,14 @@
                                 Text="RestoreButton" />
                             <wpf:RestoreButton Height="32" />
                         </StackPanel>
+
+                        <StackPanel>
+                            <TextBlock
+                                Margin="0,0,0,16"
+                                FontSize="18"
+                                Text="CloseButton" />
+                            <wpf:CloseButton Height="32" />
+                        </StackPanel>
                     </StackPanel>
 
                 </StackPanel>

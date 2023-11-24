@@ -9,16 +9,18 @@
     </ResourceDictionary.MergedDictionaries>
 
     <Style
-        x:Key="BaseMinimizeButton"
+        x:Key="BaseCloseButton"
         BasedOn="{StaticResource BaseTitlebarButton}"
-        TargetType="{x:Type local:MinimizeButton}">
+        TargetType="{x:Type local:CloseButton}">
         <Setter Property="Content">
             <Setter.Value>
                 <Path
-                    Data="{StaticResource Minimize}"
+                    Data="{StaticResource Close}"
                     Fill="{StaticResource WindowTextBrush}"
                     StrokeThickness="0" />
             </Setter.Value>
         </Setter>
+        <Setter Property="MouseOverBackgroundBrush" Value="{StaticResource MouseOverWindowCloseButtonBackgroundBrush}" />
+        <Setter Property="PressedBackgroundBrush" Value="{StaticResource PressedWindowCloseButtonBackgroundBrush}" />
     </Style>
 </ResourceDictionary>
