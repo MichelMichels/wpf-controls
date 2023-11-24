@@ -5,7 +5,7 @@
     <ControlTemplate x:Key="PlaceholderTemplate" TargetType="local:Placeholder">
         <Border x:Name="PART_LoadingElement" CornerRadius="{TemplateBinding CornerRadius}">
             <Border.Background>
-                <LinearGradientBrush x:Name="PART_LoadingElement_GradientBrush" MappingMode="Absolute">
+                <LinearGradientBrush x:Name="PART_LoadingGradientBrush" MappingMode="Absolute">
                     <LinearGradientBrush.StartPoint>
                         <Point X="0" Y="50" />
                     </LinearGradientBrush.StartPoint>
