@@ -2,7 +2,7 @@
 using System.Windows.Controls;
 using System.Windows.Media;
 
-namespace MichelMichels.Controls;
+namespace MichelMichels.Wpf.Controls;
 
 [TemplatePart(Name = "PART_LoadingGradientBrush", Type = typeof(LinearGradientBrush))]
 public class Placeholder : Control

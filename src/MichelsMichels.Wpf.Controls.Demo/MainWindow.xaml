@@ -5,7 +5,7 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:local="clr-namespace:MichelsMichels.Controls.Demo"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    xmlns:wpf="clr-namespace:MichelMichels.Controls;assembly=MichelMichels.Controls"
+    xmlns:wpf="clr-namespace:MichelMichels.Wpf.Controls;assembly=MichelMichels.Wpf.Controls"
     Title="MainWindow"
     d:DataContext="{d:DesignInstance Type={x:Type local:MainViewModel}}"
     d:DesignHeight="1080"
@@ -18,7 +18,7 @@
             <TextBlock
                 FontSize="24"
                 FontWeight="Bold"
-                Text="MichelMichels.Controls" />
+                Text="MichelMichels.Wpf.Controls" />
         </Border>
 
         <Separator

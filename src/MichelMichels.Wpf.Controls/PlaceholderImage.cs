@@ -7,7 +7,7 @@ using System.Windows.Controls;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 
-namespace MichelMichels.Controls;
+namespace MichelMichels.Wpf.Controls;
 
 [TemplatePart(Name = "PART_ImageBrush", Type = typeof(ImageBrush))]
 [TemplatePart(Name = "PART_Placeholder", Type = typeof(Placeholder))]
