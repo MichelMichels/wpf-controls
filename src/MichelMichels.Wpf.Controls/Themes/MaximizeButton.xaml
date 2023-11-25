@@ -9,7 +9,7 @@
     </ResourceDictionary.MergedDictionaries>
 
     <Style
-        x:Key="BaseMaximizeButton"
+        x:Key="MaximizeButton.Default"
         BasedOn="{StaticResource BaseTitlebarButton}"
         TargetType="{x:Type local:MaximizeButton}">
         <Setter Property="Content">

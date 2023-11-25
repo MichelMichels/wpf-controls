@@ -15,8 +15,8 @@
     <Style BasedOn="{StaticResource BasePlaceholder}" TargetType="local:Placeholder" />
     <Style BasedOn="{StaticResource BasePlaceholderImage}" TargetType="local:PlaceholderImage" />
     <Style BasedOn="{StaticResource BaseTitlebarButton}" TargetType="local:TitlebarButton" />
-    <Style BasedOn="{StaticResource BaseMinimizeButton}" TargetType="local:MinimizeButton" />
-    <Style BasedOn="{StaticResource BaseMaximizeButton}" TargetType="local:MaximizeButton" />
-    <Style BasedOn="{StaticResource BaseRestoreButton}" TargetType="local:RestoreButton" />
-    <Style BasedOn="{StaticResource BaseCloseButton}" TargetType="local:CloseButton" />
+    <Style BasedOn="{StaticResource MinimizeButton.Default}" TargetType="local:MinimizeButton" />
+    <Style BasedOn="{StaticResource MaximizeButton.Default}" TargetType="local:MaximizeButton" />
+    <Style BasedOn="{StaticResource RestoreButton.Default}" TargetType="local:RestoreButton" />
+    <Style BasedOn="{StaticResource CloseButton.Default}" TargetType="local:CloseButton" />
 </ResourceDictionary>

@@ -9,7 +9,7 @@
     </ResourceDictionary.MergedDictionaries>
 
     <Style
-        x:Key="BaseCloseButton"
+        x:Key="CloseButton.Default"
         BasedOn="{StaticResource BaseTitlebarButton}"
         TargetType="{x:Type local:CloseButton}">
         <Setter Property="Content">

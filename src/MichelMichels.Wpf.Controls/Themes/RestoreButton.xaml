@@ -9,7 +9,7 @@
     </ResourceDictionary.MergedDictionaries>
 
     <Style
-        x:Key="BaseRestoreButton"
+        x:Key="RestoreButton.Default"
         BasedOn="{StaticResource BaseTitlebarButton}"
         TargetType="{x:Type local:RestoreButton}">
         <Setter Property="Content">

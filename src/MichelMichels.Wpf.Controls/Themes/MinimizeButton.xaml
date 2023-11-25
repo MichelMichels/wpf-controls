@@ -9,7 +9,7 @@
     </ResourceDictionary.MergedDictionaries>
 
     <Style
-        x:Key="BaseMinimizeButton"
+        x:Key="MinimizeButton.Default"
         BasedOn="{StaticResource BaseTitlebarButton}"
         TargetType="{x:Type local:MinimizeButton}">
         <Setter Property="Content">
