@@ -80,43 +80,109 @@
                                 <TextBlock Text="A" />
                             </wpf:TitlebarButton>
                         </StackPanel>
-
-                        <StackPanel Margin="0,0,16,0">
-                            <TextBlock
-                                Margin="0,0,0,16"
-                                FontSize="18"
-                                Text="MinimizeButton" />
-                            <wpf:MinimizeButton Height="32" Style="{StaticResource MinimizeButton.Windows11}" />
-                        </StackPanel>
-
-                        <StackPanel Margin="0,0,16,0">
-                            <TextBlock
-                                Margin="0,0,0,16"
-                                FontSize="18"
-                                Text="MaximizeButton" />
-                            <wpf:MaximizeButton Height="32" Style="{StaticResource Maximize.Windows11}" />
-                        </StackPanel>
-
-                        <StackPanel Margin="0,0,16,0">
-                            <TextBlock
-                                Margin="0,0,0,16"
-                                FontSize="18"
-                                Text="RestoreButton" />
-                            <wpf:RestoreButton Height="32" Style="{StaticResource RestoreButton.Windows11}" />
-                        </StackPanel>
-
-                        <StackPanel Margin="0,0,16,0">
-                            <TextBlock
-                                Margin="0,0,0,16"
-                                FontSize="18"
-                                Text="CloseButton" />
-                            <wpf:CloseButton Height="32" Style="{StaticResource CloseButton.Windows11}" />
-                        </StackPanel>
                     </StackPanel>
+                    <Grid ShowGridLines="True">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition />
+                            <ColumnDefinition />
+                            <ColumnDefinition />
+                            <ColumnDefinition />
+                            <ColumnDefinition />
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition />
+                            <RowDefinition />
+                            <RowDefinition />
+                            <RowDefinition />
+                        </Grid.RowDefinitions>
 
+                        <TextBlock
+                            Grid.Row="0"
+                            Grid.Column="1"
+                            Text="Minimize"
+                            TextAlignment="Center" />
+
+                        <TextBlock
+                            Grid.Row="0"
+                            Grid.Column="2"
+                            Text="Maximize"
+                            TextAlignment="Center" />
+
+                        <TextBlock
+                            Grid.Row="0"
+                            Grid.Column="3"
+                            Text="Restore"
+                            TextAlignment="Center" />
+
+                        <TextBlock
+                            Grid.Row="0"
+                            Grid.Column="4"
+                            Text="Close"
+                            TextAlignment="Center" />
+
+
+                        <TextBlock
+                            Grid.Row="1"
+                            Grid.Column="0"
+                            VerticalAlignment="Center"
+                            Text="Windows 10" />
+
+                        <wpf:MinimizeButton
+                            Grid.Row="1"
+                            Grid.Column="1"
+                            Height="32"
+                            Style="{StaticResource MinimizeButton.Windows10}" />
+
+                        <wpf:MaximizeButton
+                            Grid.Row="1"
+                            Grid.Column="2"
+                            Height="32"
+                            Style="{StaticResource MaximizeButton.Windows10}" />
+
+                        <wpf:RestoreButton
+                            Grid.Row="1"
+                            Grid.Column="3"
+                            Height="32"
+                            Style="{StaticResource RestoreButton.Windows10}" />
+
+                        <wpf:CloseButton
+                            Grid.Row="1"
+                            Grid.Column="4"
+                            Height="32"
+                            Style="{StaticResource CloseButton.Windows10}" />
+
+                        <TextBlock
+                            Grid.Row="2"
+                            Grid.Column="0"
+                            VerticalAlignment="Center"
+                            Text="Windows 11" />
+
+                        <wpf:MinimizeButton
+                            Grid.Row="2"
+                            Grid.Column="1"
+                            Height="32"
+                            Style="{StaticResource MinimizeButton.Windows11}" />
+
+                        <wpf:MaximizeButton
+                            Grid.Row="2"
+                            Grid.Column="2"
+                            Height="32"
+                            Style="{StaticResource MaximizeButton.Windows11}" />
+
+                        <wpf:RestoreButton
+                            Grid.Row="2"
+                            Grid.Column="3"
+                            Height="32"
+                            Style="{StaticResource RestoreButton.Windows11}" />
+
+                        <wpf:CloseButton
+                            Grid.Row="2"
+                            Grid.Column="4"
+                            Height="32"
+                            Style="{StaticResource CloseButton.Windows11}" />
+                    </Grid>
                 </StackPanel>
             </Border>
-
         </ScrollViewer>
     </DockPanel>
 </Window>
