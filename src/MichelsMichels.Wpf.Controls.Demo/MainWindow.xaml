@@ -214,9 +214,25 @@
 
                     <TextBlock Margin="0,0,0,16" Text="WindowControls" />
 
-                    <WrapPanel>
-                        <wpf:WindowControls />
-                    </WrapPanel>
+                    <StackPanel>
+                        <TextBlock Text="Windows 10" />
+                        <wpf:WindowControls
+                            Margin="0,0,8,8"
+                            HorizontalAlignment="Left"
+                            Style="{StaticResource WindowControls.Windows10}" />
+
+                        <TextBlock Text="Windows 11" />
+                        <wpf:WindowControls
+                            Margin="0,0,8,8"
+                            HorizontalAlignment="Left"
+                            Style="{StaticResource WindowControls.Windows11}" />
+
+                        <TextBlock Text="macOS" />
+                        <wpf:WindowControls
+                            Margin="0,0,8,8"
+                            HorizontalAlignment="Left"
+                            Style="{StaticResource WindowControls.macOS}" />
+                    </StackPanel>
                 </StackPanel>
             </Border>
         </ScrollViewer>

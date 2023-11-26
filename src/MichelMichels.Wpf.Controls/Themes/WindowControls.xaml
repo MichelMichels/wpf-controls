@@ -5,9 +5,13 @@
     <ResourceDictionary.MergedDictionaries>
         <ResourceDictionary Source="pack://application:,,,/MichelMichels.Wpf.Controls;component/Resources/Brushes.xaml" />
         <ResourceDictionary Source="pack://application:,,,/MichelMichels.Wpf.Controls;component/Resources/Measurements.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/MichelMichels.Wpf.Controls;component/Themes/MinimizeButton.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/MichelMichels.Wpf.Controls;component/Themes/MaximizeButton.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/MichelMichels.Wpf.Controls;component/Themes/RestoreButton.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/MichelMichels.Wpf.Controls;component/Themes/CloseButton.xaml" />
     </ResourceDictionary.MergedDictionaries>
 
-    <ControlTemplate x:Key="WindowControlsTemplate" TargetType="{x:Type local:WindowControls}">
+    <ControlTemplate x:Key="WindowControlsTemplate.Default" TargetType="{x:Type local:WindowControls}">
         <Grid>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition />
@@ -15,15 +19,83 @@
                 <ColumnDefinition />
             </Grid.ColumnDefinitions>
 
-            <local:MinimizeButton Grid.Column="0" />
-            <local:MaximizeButton Grid.Column="1" />
-            <local:RestoreButton Grid.Column="1" />
-            <local:CloseButton Grid.Column="2" />
+            <local:MinimizeButton
+                x:Name="PART_MinimizeButton"
+                Grid.Column="0"
+                Style="{TemplateBinding MinimizeButtonStyle}" />
+            <local:MaximizeButton
+                x:Name="PART_MaximizeButton"
+                Grid.Column="1"
+                Style="{TemplateBinding MaximizeButtonStyle}" />
+            <local:RestoreButton
+                x:Name="PART_RestoreButton"
+                Grid.Column="1"
+                Style="{TemplateBinding RestoreButtonStyle}" />
+            <local:CloseButton
+                x:Name="PART_CloseButton"
+                Grid.Column="2"
+                Style="{TemplateBinding CloseButtonStyle}" />
         </Grid>
     </ControlTemplate>
 
+    <ControlTemplate x:Key="WindowControlsTemplate.macOS" TargetType="{x:Type local:WindowControls}">
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+
+            <local:CloseButton
+                x:Name="PART_CloseButton"
+                Grid.Column="0"
+                Style="{TemplateBinding CloseButtonStyle}" />
+            <local:MinimizeButton
+                x:Name="PART_MinimizeButton"
+                Grid.Column="1"
+                Style="{TemplateBinding MinimizeButtonStyle}" />
+            <local:MaximizeButton
+                x:Name="PART_MaximizeButton"
+                Grid.Column="2"
+                Style="{TemplateBinding MaximizeButtonStyle}" />
+            <local:RestoreButton
+                x:Name="PART_RestoreButton"
+                Grid.Column="2"
+                Style="{TemplateBinding RestoreButtonStyle}" />
+        </Grid>
+    </ControlTemplate>
+
+
     <Style x:Key="WindowControls.Default" TargetType="{x:Type local:WindowControls}">
-        <Setter Property="Template" Value="{StaticResource WindowControlsTemplate}" />
+        <Setter Property="Template" Value="{StaticResource WindowControlsTemplate.Default}" />
         <Setter Property="MinHeight" Value="32" />
+    </Style>
+    <Style
+        x:Key="WindowControls.Windows10"
+        BasedOn="{StaticResource WindowControls.Default}"
+        TargetType="local:WindowControls">
+        <Setter Property="MinimizeButtonStyle" Value="{StaticResource MinimizeButton.Windows10}" />
+        <Setter Property="MaximizeButtonStyle" Value="{StaticResource MaximizeButton.Windows10}" />
+        <Setter Property="RestoreButtonStyle" Value="{StaticResource RestoreButton.Windows10}" />
+        <Setter Property="CloseButtonStyle" Value="{StaticResource CloseButton.Windows10}" />
+    </Style>
+    <Style
+        x:Key="WindowControls.Windows11"
+        BasedOn="{StaticResource WindowControls.Default}"
+        TargetType="local:WindowControls">
+        <Setter Property="MinimizeButtonStyle" Value="{StaticResource MinimizeButton.Windows11}" />
+        <Setter Property="MaximizeButtonStyle" Value="{StaticResource MaximizeButton.Windows11}" />
+        <Setter Property="RestoreButtonStyle" Value="{StaticResource RestoreButton.Windows11}" />
+        <Setter Property="CloseButtonStyle" Value="{StaticResource CloseButton.Windows11}" />
+    </Style>
+    <Style
+        x:Key="WindowControls.macOS"
+        BasedOn="{StaticResource WindowControls.Default}"
+        TargetType="local:WindowControls">
+        <Setter Property="Template" Value="{StaticResource WindowControlsTemplate.macOS}" />
+        <Setter Property="MinimizeButtonStyle" Value="{StaticResource MinimizeButton.macOS}" />
+        <Setter Property="MaximizeButtonStyle" Value="{StaticResource MaximizeButton.macOS}" />
+        <Setter Property="RestoreButtonStyle" Value="{StaticResource RestoreButton.macOS}" />
+        <Setter Property="CloseButtonStyle" Value="{StaticResource CloseButton.macOS}" />
     </Style>
 </ResourceDictionary>

@@ -37,7 +37,7 @@
 
     <Style
         x:Key="TextTitlebarButton.Default"
-        BasedOn="{StaticResource BaseTitlebarButton}"
+        BasedOn="{StaticResource TitlebarButton.Default}"
         TargetType="{x:Type local:TextTitlebarButton}">
         <Setter Property="Template" Value="{StaticResource TextTitlebarButtonTemplate}" />
         <Setter Property="MouseOverForeground" Value="{StaticResource Text.ForegroundBrush}" />

@@ -32,7 +32,7 @@
         </ControlTemplate.Triggers>
     </ControlTemplate>
 
-    <Style x:Key="BaseTitlebarButton" TargetType="{x:Type local:TitlebarButton}">
+    <Style x:Key="TitlebarButton.Default" TargetType="{x:Type local:TitlebarButton}">
         <Setter Property="RenderOptions.EdgeMode" Value="Aliased" />
         <Setter Property="MouseOverBackground" Value="{StaticResource Button.MouseOver.Default.BackgroundBrush}" />
         <Setter Property="PressedBackground" Value="{StaticResource Button.Pressed.Default.BackgroundBrush}" />

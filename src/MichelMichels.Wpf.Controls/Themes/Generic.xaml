@@ -16,7 +16,7 @@
 
     <Style BasedOn="{StaticResource BasePlaceholder}" TargetType="local:Placeholder" />
     <Style BasedOn="{StaticResource BasePlaceholderImage}" TargetType="local:PlaceholderImage" />
-    <Style BasedOn="{StaticResource BaseTitlebarButton}" TargetType="local:TitlebarButton" />
+    <Style BasedOn="{StaticResource TitlebarButton.Default}" TargetType="local:TitlebarButton" />
     <Style BasedOn="{StaticResource TextTitlebarButton.Default}" TargetType="local:TextTitlebarButton" />
     <Style BasedOn="{StaticResource MinimizeButton.Windows11}" TargetType="local:MinimizeButton" />
     <Style BasedOn="{StaticResource MaximizeButton.Windows11}" TargetType="local:MaximizeButton" />
