@@ -180,6 +180,36 @@
                             Grid.Column="4"
                             Height="32"
                             Style="{StaticResource CloseButton.Windows11}" />
+
+                        <TextBlock
+                            Grid.Row="3"
+                            Grid.Column="0"
+                            VerticalAlignment="Center"
+                            Text="macOS" />
+
+                        <wpf:MinimizeButton
+                            Grid.Row="3"
+                            Grid.Column="1"
+                            Height="32"
+                            Style="{StaticResource MinimizeButton.macOS}" />
+
+                        <wpf:MaximizeButton
+                            Grid.Row="3"
+                            Grid.Column="2"
+                            Height="32"
+                            Style="{StaticResource MaximizeButton.macOS}" />
+
+                        <wpf:RestoreButton
+                            Grid.Row="3"
+                            Grid.Column="3"
+                            Height="32"
+                            Style="{StaticResource RestoreButton.macOS}" />
+
+                        <wpf:CloseButton
+                            Grid.Row="3"
+                            Grid.Column="4"
+                            Height="32"
+                            Style="{StaticResource CloseButton.macOS}" />
                     </Grid>
                 </StackPanel>
             </Border>

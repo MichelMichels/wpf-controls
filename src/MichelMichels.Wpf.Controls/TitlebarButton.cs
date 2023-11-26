@@ -12,6 +12,12 @@ public class TitlebarButton : Button
         typeof(TitlebarButton),
         new PropertyMetadata(new SolidColorBrush()));
 
+    public static readonly DependencyProperty MouseOverForegroundProperty = DependencyProperty.Register(
+        nameof(MouseOverForeground),
+        typeof(Brush),
+        typeof(TitlebarButton),
+        new PropertyMetadata(new SolidColorBrush()));
+
     public static readonly DependencyProperty PressedBackgroundProperty = DependencyProperty.Register(
         nameof(PressedBackground),
         typeof(Brush),
@@ -28,6 +34,11 @@ public class TitlebarButton : Button
     {
         get => (Brush)GetValue(MouseOverBackgroundProperty);
         set => SetValue(MouseOverBackgroundProperty, value);
+    }
+    public Brush MouseOverForeground
+    {
+        get => (Brush)GetValue(MouseOverForegroundProperty);
+        set => SetValue(MouseOverForegroundProperty, value);
     }
     public Brush PressedBackground
     {

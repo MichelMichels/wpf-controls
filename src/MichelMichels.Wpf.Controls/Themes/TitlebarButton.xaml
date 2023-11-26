@@ -33,10 +33,9 @@
     </ControlTemplate>
 
     <Style x:Key="BaseTitlebarButton" TargetType="{x:Type local:TitlebarButton}">
-        <Setter Property="RenderOptions.EdgeMode" Value="Unspecified" />
+        <Setter Property="RenderOptions.EdgeMode" Value="Aliased" />
         <Setter Property="MouseOverBackground" Value="{StaticResource Button.MouseOver.Default.BackgroundBrush}" />
         <Setter Property="PressedBackground" Value="{StaticResource Button.Pressed.Default.BackgroundBrush}" />
-        <Setter Property="Foreground" Value="{StaticResource Text.ForegroundBrush}" />
         <Setter Property="Padding" Value="0" />
         <Setter Property="Width" Value="{StaticResource TitlebarButtonWidth}" />
         <Setter Property="WindowChrome.IsHitTestVisibleInChrome" Value="True" />
