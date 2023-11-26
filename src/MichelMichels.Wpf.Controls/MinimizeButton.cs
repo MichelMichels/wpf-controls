@@ -2,7 +2,7 @@
 
 namespace MichelMichels.Wpf.Controls;
 
-public class MinimizeButton : TitlebarButton
+public class MinimizeButton : TextTitlebarButton
 {
     public MinimizeButton()
     {

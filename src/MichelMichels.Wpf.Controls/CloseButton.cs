@@ -2,7 +2,7 @@
 
 namespace MichelMichels.Wpf.Controls;
 
-public class CloseButton : TitlebarButton
+public class CloseButton : TextTitlebarButton
 {
     public CloseButton()
     {

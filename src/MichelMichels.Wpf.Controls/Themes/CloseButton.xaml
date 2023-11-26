@@ -6,21 +6,13 @@
         <ResourceDictionary Source="pack://application:,,,/MichelMichels.Wpf.Controls;component/Resources/Brushes.xaml" />
         <ResourceDictionary Source="pack://application:,,,/MichelMichels.Wpf.Controls;component/Resources/Paths.xaml" />
         <ResourceDictionary Source="pack://application:,,,/MichelMichels.Wpf.Controls;component/Themes/TitlebarButton.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/MichelMichels.Wpf.Controls;component/Themes/TextTitlebarButton.xaml" />
     </ResourceDictionary.MergedDictionaries>
 
     <Style
         x:Key="CloseButton.Default"
-        BasedOn="{StaticResource BaseTitlebarButton}"
+        BasedOn="{StaticResource TextTitlebarButton.Default}"
         TargetType="{x:Type local:CloseButton}">
-        <Setter Property="Content">
-            <Setter.Value>
-                <Path
-                    Data="{StaticResource Close}"
-                    Fill="{StaticResource Text.ForegroundBrush}"
-                    StrokeThickness="0" />
-            </Setter.Value>
-        </Setter>
-        <Setter Property="MouseOverForeground" Value="{StaticResource Button.MouseOver.Close.ForegroundBrush}" />
         <Setter Property="MouseOverBackground" Value="{StaticResource Button.MouseOver.Close.BackgroundBrush}" />
         <Setter Property="PressedBackground" Value="{StaticResource Button.Pressed.Close.BackgroundBrush}" />
     </Style>
@@ -29,22 +21,17 @@
         x:Key="CloseButton.Windows10"
         BasedOn="{StaticResource CloseButton.Default}"
         TargetType="local:CloseButton">
-        <Setter Property="Content">
-            <Setter.Value>
-                <TextBlock FontFamily="Segoe MDL2 Assets" Text="&#xE8BB;" />
-            </Setter.Value>
-        </Setter>
+        <Setter Property="FontFamily" Value="Segoe MDL2 Assets" />
+        <Setter Property="Text" Value="&#xE8BB;" />
     </Style>
 
     <Style
         x:Key="CloseButton.Windows11"
         BasedOn="{StaticResource CloseButton.Default}"
         TargetType="local:CloseButton">
-        <Setter Property="Content">
-            <Setter.Value>
-                <TextBlock FontFamily="Segoe Fluent Icons" Text="&#xE8BB;" />
-            </Setter.Value>
-        </Setter>
+        <Setter Property="MouseOverForeground" Value="{StaticResource Button.MouseOver.Close.ForegroundBrush}" />
+        <Setter Property="FontFamily" Value="Segoe Fluent Icons" />
+        <Setter Property="Text" Value="&#xE8BB;" />
     </Style>
 
     <Style x:Key="CloseButton.macOS" TargetType="local:CloseButton">

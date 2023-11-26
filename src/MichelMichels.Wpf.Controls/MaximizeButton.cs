@@ -2,7 +2,7 @@
 
 namespace MichelMichels.Wpf.Controls;
 
-public class MaximizeButton : TitlebarButton
+public class MaximizeButton : TextTitlebarButton
 {
     public MaximizeButton()
     {

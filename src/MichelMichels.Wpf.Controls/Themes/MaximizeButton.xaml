@@ -6,40 +6,22 @@
         <ResourceDictionary Source="pack://application:,,,/MichelMichels.Wpf.Controls;component/Resources/Brushes.xaml" />
         <ResourceDictionary Source="pack://application:,,,/MichelMichels.Wpf.Controls;component/Resources/Paths.xaml" />
         <ResourceDictionary Source="pack://application:,,,/MichelMichels.Wpf.Controls;component/Themes/TitlebarButton.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/MichelMichels.Wpf.Controls;component/Themes/TextTitlebarButton.xaml" />
     </ResourceDictionary.MergedDictionaries>
 
     <Style
-        x:Key="MaximizeButton.Default"
-        BasedOn="{StaticResource BaseTitlebarButton}"
-        TargetType="{x:Type local:MaximizeButton}">
-        <Setter Property="Content">
-            <Setter.Value>
-                <Path
-                    Data="{StaticResource Maximize}"
-                    Fill="{StaticResource Text.ForegroundBrush}"
-                    StrokeThickness="0" />
-            </Setter.Value>
-        </Setter>
-    </Style>
-    <Style
         x:Key="MaximizeButton.Windows10"
-        BasedOn="{StaticResource BaseTitlebarButton}"
+        BasedOn="{StaticResource TextTitlebarButton.Default}"
         TargetType="local:MaximizeButton">
-        <Setter Property="Content">
-            <Setter.Value>
-                <TextBlock FontFamily="Segoe MDL2 Assets" Text="&#xE922;" />
-            </Setter.Value>
-        </Setter>
+        <Setter Property="FontFamily" Value="Segoe MDL2 Assets" />
+        <Setter Property="Text" Value="&#xE922;" />
     </Style>
     <Style
         x:Key="MaximizeButton.Windows11"
-        BasedOn="{StaticResource BaseTitlebarButton}"
+        BasedOn="{StaticResource TextTitlebarButton.Default}"
         TargetType="local:MaximizeButton">
-        <Setter Property="Content">
-            <Setter.Value>
-                <TextBlock FontFamily="Segoe Fluent Icons" Text="&#xE922;" />
-            </Setter.Value>
-        </Setter>
+        <Setter Property="FontFamily" Value="Segoe Fluent Icons" />
+        <Setter Property="Text" Value="&#xE922;" />
     </Style>
 
     <Style x:Key="MaximizeButton.macOS" TargetType="local:MaximizeButton">

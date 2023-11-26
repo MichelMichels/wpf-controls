@@ -211,6 +211,12 @@
                             Height="32"
                             Style="{StaticResource CloseButton.macOS}" />
                     </Grid>
+
+                    <TextBlock Margin="0,0,0,16" Text="WindowControls" />
+
+                    <WrapPanel>
+                        <wpf:WindowControls />
+                    </WrapPanel>
                 </StackPanel>
             </Border>
         </ScrollViewer>

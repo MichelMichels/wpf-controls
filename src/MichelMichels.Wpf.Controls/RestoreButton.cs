@@ -2,7 +2,7 @@
 
 namespace MichelMichels.Wpf.Controls;
 
-public class RestoreButton : TitlebarButton
+public class RestoreButton : TextTitlebarButton
 {
     public RestoreButton()
     {

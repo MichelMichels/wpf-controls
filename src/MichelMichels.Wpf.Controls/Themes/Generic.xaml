@@ -6,17 +6,21 @@
         <ResourceDictionary Source="pack://application:,,,/MichelMichels.Wpf.Controls;component/Themes/Placeholder.xaml" />
         <ResourceDictionary Source="pack://application:,,,/MichelMichels.Wpf.Controls;component/Themes/PlaceholderImage.xaml" />
         <ResourceDictionary Source="pack://application:,,,/MichelMichels.Wpf.Controls;component/Themes/TitlebarButton.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/MichelMichels.Wpf.Controls;component/Themes/TextTitlebarButton.xaml" />
         <ResourceDictionary Source="pack://application:,,,/MichelMichels.Wpf.Controls;component/Themes/MinimizeButton.xaml" />
         <ResourceDictionary Source="pack://application:,,,/MichelMichels.Wpf.Controls;component/Themes/MaximizeButton.xaml" />
         <ResourceDictionary Source="pack://application:,,,/MichelMichels.Wpf.Controls;component/Themes/RestoreButton.xaml" />
         <ResourceDictionary Source="pack://application:,,,/MichelMichels.Wpf.Controls;component/Themes/CloseButton.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/MichelMichels.Wpf.Controls;component/Themes/WindowControls.xaml" />
     </ResourceDictionary.MergedDictionaries>
 
     <Style BasedOn="{StaticResource BasePlaceholder}" TargetType="local:Placeholder" />
     <Style BasedOn="{StaticResource BasePlaceholderImage}" TargetType="local:PlaceholderImage" />
     <Style BasedOn="{StaticResource BaseTitlebarButton}" TargetType="local:TitlebarButton" />
-    <Style BasedOn="{StaticResource MinimizeButton.Default}" TargetType="local:MinimizeButton" />
-    <Style BasedOn="{StaticResource MaximizeButton.Default}" TargetType="local:MaximizeButton" />
-    <Style BasedOn="{StaticResource RestoreButton.Default}" TargetType="local:RestoreButton" />
-    <Style BasedOn="{StaticResource CloseButton.Default}" TargetType="local:CloseButton" />
+    <Style BasedOn="{StaticResource TextTitlebarButton.Default}" TargetType="local:TextTitlebarButton" />
+    <Style BasedOn="{StaticResource MinimizeButton.Windows11}" TargetType="local:MinimizeButton" />
+    <Style BasedOn="{StaticResource MaximizeButton.Windows11}" TargetType="local:MaximizeButton" />
+    <Style BasedOn="{StaticResource RestoreButton.Windows11}" TargetType="local:RestoreButton" />
+    <Style BasedOn="{StaticResource CloseButton.Windows11}" TargetType="local:CloseButton" />
+    <Style BasedOn="{StaticResource WindowControls.Default}" TargetType="local:WindowControls" />
 </ResourceDictionary>
