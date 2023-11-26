@@ -37,7 +37,7 @@
         <Setter Property="MouseOverBackground" Value="{StaticResource Button.MouseOver.Default.BackgroundBrush}" />
         <Setter Property="PressedBackground" Value="{StaticResource Button.Pressed.Default.BackgroundBrush}" />
         <Setter Property="Padding" Value="0" />
-        <Setter Property="Width" Value="{StaticResource TitlebarButtonWidth}" />
+        <Setter Property="MinWidth" Value="{StaticResource TitlebarButtonWidth}" />
         <Setter Property="WindowChrome.IsHitTestVisibleInChrome" Value="True" />
         <Setter Property="VerticalAlignment" Value="Stretch" />
         <Setter Property="IsTabStop" Value="False" />

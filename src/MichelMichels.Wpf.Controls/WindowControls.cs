@@ -163,9 +163,11 @@ public class WindowControls : BaseControl
             case ResizeMode.NoResize:
                 SetButtonVisibility(_minimizeButton, Visibility.Collapsed);
                 SetButtonVisibility(_maximizeButton, Visibility.Collapsed);
+                SetButtonVisibility(_restoreButton, Visibility.Collapsed);
                 break;
             case ResizeMode.CanMinimize:
                 SetButtonEnabled(_maximizeButton, false);
+                SetButtonEnabled(_restoreButton, false);
                 break;
         }
     }

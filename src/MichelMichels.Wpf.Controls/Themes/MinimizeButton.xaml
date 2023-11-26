@@ -10,6 +10,7 @@
     </ResourceDictionary.MergedDictionaries>
 
     <Style x:Key="MinimizeButton.macOS" TargetType="local:MinimizeButton">
+        <Setter Property="MinWidth" Value="24" />
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="local:MinimizeButton">
