@@ -69,6 +69,7 @@
     <Style x:Key="WindowControls.Default" TargetType="{x:Type local:WindowControls}">
         <Setter Property="Template" Value="{StaticResource WindowControlsTemplate.Default}" />
         <Setter Property="MinHeight" Value="32" />
+        <Setter Property="HorizontalAlignment" Value="Right" />
     </Style>
     <Style
         x:Key="WindowControls.Windows10"
@@ -93,6 +94,8 @@
         BasedOn="{StaticResource WindowControls.Default}"
         TargetType="local:WindowControls">
         <Setter Property="Template" Value="{StaticResource WindowControlsTemplate.macOS}" />
+        <Setter Property="HorizontalAlignment" Value="Left" />
+        <Setter Property="Margin" Value="4,0,0,0" />
         <Setter Property="MinimizeButtonStyle" Value="{StaticResource MinimizeButton.macOS}" />
         <Setter Property="MaximizeButtonStyle" Value="{StaticResource MaximizeButton.macOS}" />
         <Setter Property="RestoreButtonStyle" Value="{StaticResource RestoreButton.macOS}" />

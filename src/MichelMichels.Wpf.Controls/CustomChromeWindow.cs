@@ -22,6 +22,12 @@ public class CustomChromeWindow : BaseWindow
         typeof(CustomChromeWindow),
         new PropertyMetadata(false, new PropertyChangedCallback(OnExtendsContentIntoTitleBarChanged)));
 
+    public static readonly DependencyProperty WindowControlsStyleProperty = DependencyProperty.Register(
+        nameof(WindowControlsStyle),
+        typeof(Style),
+        typeof(CustomChromeWindow),
+        new PropertyMetadata(null));
+
     private AdornerDecorator? _windowContent;
 
     public CustomChromeWindow()
@@ -62,6 +68,12 @@ public class CustomChromeWindow : BaseWindow
         set => SetValue(ExtendsContentIntoTitleBarProperty, value);
     }
 
+    public Style WindowControlsStyle
+    {
+        get => (Style)GetValue(WindowControlsStyleProperty);
+        set => SetValue(WindowControlsStyleProperty, value);
+    }
+
     protected override void OnSourceInitialized(EventArgs e)
     {
         base.OnSourceInitialized(e);
@@ -74,7 +86,12 @@ public class CustomChromeWindow : BaseWindow
 
     private void SetWindowContentMargin()
     {
-        _windowContent!.Margin = ExtendsContentIntoTitleBar ? new Thickness(0) : new Thickness(0, TitlebarHeight, 0, 0);
+        if (_windowContent == null)
+        {
+            return;
+        }
+
+        _windowContent.Margin = ExtendsContentIntoTitleBar ? new Thickness(0) : new Thickness(0, TitlebarHeight, 0, 0);
     }
 
     private static void OnExtendsContentIntoTitleBarChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)

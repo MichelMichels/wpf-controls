@@ -6,4 +6,5 @@
     <SolidColorBrush x:Key="Button.MouseOver.Close.BackgroundBrush" Color="#E81122" />
     <SolidColorBrush x:Key="Button.MouseOver.Close.ForegroundBrush" Color="#FFFFFF" />
     <SolidColorBrush x:Key="Button.Pressed.Close.BackgroundBrush" Color="#F1707B" />
-</ResourceDictionary>
+    <SolidColorBrush x:Key="Window.BorderBrush" Color="LightGray" />
+</ResourceDictionary> 

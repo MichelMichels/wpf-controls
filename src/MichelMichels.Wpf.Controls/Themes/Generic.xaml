@@ -12,6 +12,7 @@
         <ResourceDictionary Source="pack://application:,,,/MichelMichels.Wpf.Controls;component/Themes/RestoreButton.xaml" />
         <ResourceDictionary Source="pack://application:,,,/MichelMichels.Wpf.Controls;component/Themes/CloseButton.xaml" />
         <ResourceDictionary Source="pack://application:,,,/MichelMichels.Wpf.Controls;component/Themes/WindowControls.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/MichelMichels.Wpf.Controls;component/Themes/CustomChromeWindow.xaml" />
     </ResourceDictionary.MergedDictionaries>
 
     <Style BasedOn="{StaticResource BasePlaceholder}" TargetType="local:Placeholder" />
@@ -23,4 +24,5 @@
     <Style BasedOn="{StaticResource RestoreButton.Windows11}" TargetType="local:RestoreButton" />
     <Style BasedOn="{StaticResource CloseButton.Windows11}" TargetType="local:CloseButton" />
     <Style BasedOn="{StaticResource WindowControls.Default}" TargetType="local:WindowControls" />
+    <Style BasedOn="{StaticResource CustomChromeWindow.Windows11}" TargetType="local:CustomChromeWindow" />
 </ResourceDictionary>

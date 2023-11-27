@@ -4,34 +4,39 @@
     xmlns:converters="clr-namespace:MichelMichels.Wpf.Controls.Converters"
     xmlns:local="clr-namespace:MichelMichels.Wpf.Controls">
     <ResourceDictionary.MergedDictionaries>
-        <ResourceDictionary Source="pack://application:,,,/MichelMichels.Wpf.Controls;component/Themes/Brushes.xaml" />
-        <ResourceDictionary Source="pack://application:,,,/MichelMichels.Wpf.Controls;component/Themes/TitlebarButton.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/MichelMichels.Wpf.Controls;component/Resources/Brushes.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/MichelMichels.Wpf.Controls;component/Themes/WindowControls.xaml" />
     </ResourceDictionary.MergedDictionaries>
 
     <converters:DoubleToGridLenghtConverter x:Key="DoubleToGridLength" />
 
-    <ControlTemplate x:Key="CustomChromeWindowTemplate.Windows.Default" TargetType="{x:Type local:CustomChromeWindow}">
+    <ControlTemplate x:Key="CustomChromeWindowTemplate" TargetType="{x:Type local:CustomChromeWindow}">
         <Border
             x:Name="PART_WindowBorder"
             Background="{TemplateBinding Background}"
             BorderBrush="{TemplateBinding BorderBrush}"
             BorderThickness="{TemplateBinding BorderThickness}">
             <Grid>
-                
-                
+                <local:WindowControls
+                    VerticalAlignment="Top"
+                    Panel.ZIndex="1000"
+                    Style="{TemplateBinding WindowControlsStyle}" />
+
                 <AdornerDecorator x:Name="PART_WindowContent">
                     <ContentPresenter />
                 </AdornerDecorator>
+
             </Grid>
         </Border>
     </ControlTemplate>
 
-    <Style x:Key="BaseChromeWindow" TargetType="{x:Type local:CustomChromeWindow}">
+    <Style x:Key="CustomChromeWindow.Default" TargetType="{x:Type local:CustomChromeWindow}">
         <Setter Property="WindowStyle" Value="None" />
         <Setter Property="Background" Value="White" />
 
         <!--  This property makes Windows 11 lose rounded corners  -->
         <Setter Property="AllowsTransparency" Value="True" />
+        <Setter Property="ExtendsContentIntoTitleBar" Value="True" />
 
         <Setter Property="AutomationProperties.IsOffscreenBehavior" Value="Onscreen" />
         <Setter Property="RenderOptions.BitmapScalingMode" Value="Fant" />
@@ -40,12 +45,33 @@
         <Setter Property="UseLayoutRounding" Value="True" />
         <Setter Property="TitlebarHeight" Value="32" />
         <Setter Property="BorderThickness" Value="1" />
-        <Setter Property="BorderBrush" Value="{StaticResource WindowBorderBrush}" />
-        <Setter Property="Template" Value="{StaticResource DefaultWindowTemplate}" />
+        <Setter Property="BorderBrush" Value="{StaticResource Window.BorderBrush}" />
+        <Setter Property="Template" Value="{StaticResource CustomChromeWindowTemplate}" />
         <Style.Triggers>
             <DataTrigger Binding="{Binding RelativeSource={RelativeSource Mode=Self}, Path=WindowState}" Value="Maximized">
                 <Setter Property="BorderThickness" Value="0" />
             </DataTrigger>
         </Style.Triggers>
+    </Style>
+
+    <Style
+        x:Key="CustomChromeWindow.Windows10"
+        BasedOn="{StaticResource CustomChromeWindow.Default}"
+        TargetType="local:CustomChromeWindow">
+        <Setter Property="WindowControlsStyle" Value="{StaticResource WindowControls.Windows10}" />
+    </Style>
+    <Style
+        x:Key="CustomChromeWindow.Windows11"
+        BasedOn="{StaticResource CustomChromeWindow.Default}"
+        TargetType="local:CustomChromeWindow">
+        <Setter Property="AllowsTransparency" Value="False" />
+        <Setter Property="WindowControlsStyle" Value="{StaticResource WindowControls.Windows11}" />
+    </Style>
+    <Style
+        x:Key="CustomChromeWindow.macOS"
+        BasedOn="{StaticResource CustomChromeWindow.Default}"
+        TargetType="local:CustomChromeWindow">
+        <Setter Property="AllowsTransparency" Value="False" />
+        <Setter Property="WindowControlsStyle" Value="{StaticResource WindowControls.macOS}" />
     </Style>
 </ResourceDictionary>

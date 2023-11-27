@@ -1,4 +1,4 @@
-﻿<Window
+﻿<wpf:CustomChromeWindow
     x:Class="MichelsMichels.Controls.Demo.MainWindow"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
@@ -10,7 +10,9 @@
     d:DataContext="{d:DesignInstance Type={x:Type local:MainViewModel}}"
     d:DesignHeight="1080"
     d:DesignWidth="1920"
+    ExtendsContentIntoTitleBar="True"
     SnapsToDevicePixels="True"
+    Style="{StaticResource CustomChromeWindow.Windows11}"
     mc:Ignorable="d">
     <DockPanel>
         <Border Padding="16" DockPanel.Dock="Top">
@@ -244,4 +246,4 @@
             </Border>
         </ScrollViewer>
     </DockPanel>
-</Window>
+</wpf:CustomChromeWindow>
