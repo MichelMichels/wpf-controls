@@ -8,37 +8,40 @@ using System.Windows.Shell;
 
 namespace MichelMichels.Wpf.Controls;
 
-public class CustomChromeWindow : BaseWindow
+public class ChromeWindow : BaseWindow
 {
+    // TODO: Minimizing animation gone: https://stackoverflow.com/a/21419172
+    // TODO: No snap layout support in Windows 11
+
     public static readonly DependencyProperty TitlebarHeightProperty = DependencyProperty.Register(
         nameof(TitlebarHeight),
         typeof(double),
-        typeof(CustomChromeWindow),
+        typeof(ChromeWindow),
         new PropertyMetadata(48.0));
 
     public static readonly DependencyProperty ExtendsContentIntoTitleBarProperty = DependencyProperty.Register(
         nameof(ExtendsContentIntoTitleBar),
         typeof(bool),
-        typeof(CustomChromeWindow),
+        typeof(ChromeWindow),
         new PropertyMetadata(false, new PropertyChangedCallback(OnExtendsContentIntoTitleBarChanged)));
 
     public static readonly DependencyProperty WindowControlsStyleProperty = DependencyProperty.Register(
         nameof(WindowControlsStyle),
         typeof(Style),
-        typeof(CustomChromeWindow),
+        typeof(ChromeWindow),
         new PropertyMetadata(null));
 
     private AdornerDecorator? _windowContent;
 
-    public CustomChromeWindow()
+    public ChromeWindow()
     {
         MouseLeftButtonDown += (_, _) => { DragMove(); };
     }
 
-    static CustomChromeWindow()
+    static ChromeWindow()
     {
-        DefaultStyleKeyProperty.OverrideMetadata(typeof(CustomChromeWindow),
-            new FrameworkPropertyMetadata(typeof(CustomChromeWindow)));
+        DefaultStyleKeyProperty.OverrideMetadata(typeof(ChromeWindow),
+            new FrameworkPropertyMetadata(typeof(ChromeWindow)));
     }
 
     public override void OnApplyTemplate()
@@ -96,7 +99,7 @@ public class CustomChromeWindow : BaseWindow
 
     private static void OnExtendsContentIntoTitleBarChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
     {
-        if (d is not CustomChromeWindow window)
+        if (d is not ChromeWindow window)
         {
             return;
         }
