@@ -9,33 +9,6 @@
         <ResourceDictionary Source="pack://application:,,,/MichelMichels.Wpf.Controls;component/Themes/TextTitlebarButton.xaml" />
     </ResourceDictionary.MergedDictionaries>
 
-    <Style x:Key="MinimizeButton.macOS" TargetType="local:MinimizeButton">
-        <Setter Property="MinWidth" Value="24" />
-        <Setter Property="Template">
-            <Setter.Value>
-                <ControlTemplate TargetType="local:MinimizeButton">
-                    <Border
-                        x:Name="border"
-                        Width="16"
-                        Height="16"
-                        VerticalAlignment="Stretch"
-                        Background="#fdbc40"
-                        CornerRadius="16"
-                        RenderOptions.EdgeMode="Aliased"
-                        SnapsToDevicePixels="True" />
-                    <ControlTemplate.Triggers>
-                        <Trigger Property="IsMouseOver" Value="True">
-                            <Setter TargetName="border" Property="Background" Value="#de9f34" />
-                        </Trigger>
-                        <Trigger Property="IsPressed" Value="True">
-                            <Setter TargetName="border" Property="Background" Value="{Binding PressedBackground, RelativeSource={RelativeSource TemplatedParent}}" />
-                        </Trigger>
-                    </ControlTemplate.Triggers>
-                </ControlTemplate>
-            </Setter.Value>
-        </Setter>
-    </Style>
-
     <Style
         x:Key="MinimizeButton.Windows10"
         BasedOn="{StaticResource TextTitlebarButton.Default}"
@@ -49,5 +22,13 @@
         TargetType="local:MinimizeButton">
         <Setter Property="FontFamily" Value="Segoe Fluent Icons" />
         <Setter Property="Text" Value="&#xE921;" />
+    </Style>
+    <Style
+        x:Key="MinimizeButton.macOS"
+        BasedOn="{StaticResource TextTitlebarButton.macOS}"
+        TargetType="local:MinimizeButton">
+        <Setter Property="Foreground" Value="{StaticResource Button.Normal.Minimize.ForegroundBrush.macOS}" />
+        <Setter Property="MouseOverForeground" Value="{StaticResource Button.MouseOver.Minimize.ForegroundBrush.macOS}" />
+        <Setter Property="PressedForeground" Value="{StaticResource Button.MouseOver.Minimize.ForegroundBrush.macOS}" />
     </Style>
 </ResourceDictionary>

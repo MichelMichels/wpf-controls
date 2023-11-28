@@ -24,31 +24,12 @@
         <Setter Property="Text" Value="&#xE922;" />
     </Style>
 
-    <Style x:Key="MaximizeButton.macOS" TargetType="local:MaximizeButton">
-        <Setter Property="MinWidth" Value="24" />
-        <Setter Property="Template">
-            <Setter.Value>
-                <ControlTemplate TargetType="local:MaximizeButton">
-                    <Border
-                        x:Name="border"
-                        Width="16"
-                        Height="16"
-                        VerticalAlignment="Stretch"
-                        Background="#33c748"
-                        CornerRadius="16"
-                        RenderOptions.EdgeMode="Aliased"
-                        SnapsToDevicePixels="True" />
-                    <ControlTemplate.Triggers>
-                        <Trigger Property="IsMouseOver" Value="True">
-                            <Setter TargetName="border" Property="Background" Value="#27aa35" />
-                        </Trigger>
-                        <Trigger Property="IsPressed" Value="True">
-                            <Setter TargetName="border" Property="Background" Value="{Binding PressedBackground, RelativeSource={RelativeSource TemplatedParent}}" />
-                        </Trigger>
-                    </ControlTemplate.Triggers>
-                </ControlTemplate>
-            </Setter.Value>
-        </Setter>
+    <Style
+        x:Key="MaximizeButton.macOS"
+        BasedOn="{StaticResource TextTitlebarButton.macOS}"
+        TargetType="local:MaximizeButton">
+        <Setter Property="Foreground" Value="{StaticResource Button.Normal.Maximize.ForegroundBrush.macOS}" />
+        <Setter Property="MouseOverForeground" Value="{StaticResource Button.MouseOver.Maximize.ForegroundBrush.macOS}" />
+        <Setter Property="PressedForeground" Value="{StaticResource Button.MouseOver.Maximize.ForegroundBrush.macOS}" />
     </Style>
-
 </ResourceDictionary>

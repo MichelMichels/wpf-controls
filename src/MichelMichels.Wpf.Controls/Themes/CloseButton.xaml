@@ -34,31 +34,14 @@
         <Setter Property="Text" Value="&#xE8BB;" />
     </Style>
 
-    <Style x:Key="CloseButton.macOS" TargetType="local:CloseButton">
-        <Setter Property="MinWidth" Value="24" />
-        <Setter Property="Template">
-            <Setter.Value>
-                <ControlTemplate TargetType="local:CloseButton">
-                    <Border
-                        x:Name="border"
-                        Width="16"
-                        Height="16"
-                        VerticalAlignment="Stretch"
-                        Background="#fc5753"
-                        CornerRadius="16"
-                        RenderOptions.EdgeMode="Aliased"
-                        SnapsToDevicePixels="True" />
-                    <ControlTemplate.Triggers>
-                        <Trigger Property="IsMouseOver" Value="True">
-                            <Setter TargetName="border" Property="Background" Value="#df4744" />
-                        </Trigger>
-                        <Trigger Property="IsPressed" Value="True">
-                            <Setter TargetName="border" Property="Background" Value="{Binding PressedBackground, RelativeSource={RelativeSource TemplatedParent}}" />
-                        </Trigger>
-                    </ControlTemplate.Triggers>
-                </ControlTemplate>
-            </Setter.Value>
-        </Setter>
+    <Style
+        x:Key="CloseButton.macOS"
+        BasedOn="{StaticResource TextTitlebarButton.macOS}"
+        TargetType="local:CloseButton">
+        <Setter Property="Text" Value="&#xE91F;" />
+        <Setter Property="Foreground" Value="{StaticResource Button.Normal.Close.ForegroundBrush.macOS}" />
+        <Setter Property="MouseOverForeground" Value="{StaticResource Button.MouseOver.Close.ForegroundBrush.macOS}" />
+        <Setter Property="PressedForeground" Value="{StaticResource Button.MouseOver.Close.ForegroundBrush.macOS}" />
     </Style>
 
 </ResourceDictionary>

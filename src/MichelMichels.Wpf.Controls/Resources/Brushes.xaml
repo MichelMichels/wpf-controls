@@ -2,9 +2,19 @@
     <SolidColorBrush x:Key="Text.ForegroundBrush" Color="Black" />
     <SolidColorBrush x:Key="Button.MouseOver.Default.BackgroundBrush" Color="#33000000" />
     <SolidColorBrush x:Key="Button.MouseOver.Default.ForegroundBrush" Color="#FF000000" />
-    <SolidColorBrush x:Key="Button.Pressed.Default.BackgroundBrush" Color="#44000000" />
     <SolidColorBrush x:Key="Button.MouseOver.Close.BackgroundBrush" Color="#E81122" />
     <SolidColorBrush x:Key="Button.MouseOver.Close.ForegroundBrush" Color="#FFFFFF" />
     <SolidColorBrush x:Key="Button.Pressed.Close.BackgroundBrush" Color="#F1707B" />
+    <SolidColorBrush x:Key="Button.Pressed.Default.BackgroundBrush" Color="#44000000" />
     <SolidColorBrush x:Key="Window.BorderBrush" Color="LightGray" />
+
+    <!--  macOS  -->
+    <SolidColorBrush x:Key="Button.Normal.Minimize.ForegroundBrush.macOS" Color="#FDBC40" />
+    <SolidColorBrush x:Key="Button.MouseOver.Minimize.ForegroundBrush.macOS" Color="#DE9F34" />
+    <SolidColorBrush x:Key="Button.Normal.Maximize.ForegroundBrush.macOS" Color="#33C748" />
+    <SolidColorBrush x:Key="Button.MouseOver.Maximize.ForegroundBrush.macOS" Color="#27AA35" />
+    <SolidColorBrush x:Key="Button.Normal.Restore.ForegroundBrush.macOS" Color="#33C748" />
+    <SolidColorBrush x:Key="Button.MouseOver.Restore.ForegroundBrush.macOS" Color="#27AA35" />
+    <SolidColorBrush x:Key="Button.Normal.Close.ForegroundBrush.macOS" Color="#FC5753" />
+    <SolidColorBrush x:Key="Button.MouseOver.Close.ForegroundBrush.macOS" Color="#DF4744" />
 </ResourceDictionary> 
