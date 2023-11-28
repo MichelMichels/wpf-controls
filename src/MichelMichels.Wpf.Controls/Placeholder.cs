@@ -1,4 +1,5 @@
 ﻿using MichelMichels.Wpf.Controls.Resources;
+using System;
 using System.Windows;
 using System.Windows.Media;
 
@@ -35,7 +36,13 @@ public class Placeholder : BaseControl
 
     public override void OnApplyTemplate()
     {
-        Window.GetWindow(this).SizeChanged += Window_SizeChanged;
+        try
+        {
+            Window.GetWindow(this).SizeChanged += Window_SizeChanged;
+        }
+        catch (NullReferenceException)
+        {
+        }
 
         TryGetTemplateChild(nameof(Part.LoadingGradientBrush), out _brush);
 

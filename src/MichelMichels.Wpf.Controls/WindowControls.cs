@@ -71,8 +71,12 @@ public class WindowControls : BaseControl
 
     public override void OnApplyTemplate()
     {
-        _window = Window.GetWindow(this) ?? throw new NotSupportedException();
-        _window.StateChanged += OnWindowStateChanged;
+        try
+        {
+            _window = Window.GetWindow(this) ?? throw new NotSupportedException();
+            _window.StateChanged += OnWindowStateChanged;
+        }
+        catch (NullReferenceException) { }
 
         SubscribeToButtonsClickEvent();
         RefreshMaximizeRestoreButton();
@@ -106,13 +110,22 @@ public class WindowControls : BaseControl
 
     private void RefreshMaximizeRestoreButton()
     {
-        var isMaximized = _window!.WindowState == WindowState.Maximized;
+        if (_window == null)
+        {
+            return;
+        }
+
+        bool isMaximized = _window.WindowState == WindowState.Maximized;
 
         if (_maximizeButton != null)
+        {
             _maximizeButton.Visibility = isMaximized ? Visibility.Collapsed : Visibility.Visible;
+        }
 
         if (_restoreButton != null)
+        {
             _restoreButton.Visibility = isMaximized ? Visibility.Visible : Visibility.Collapsed;
+        }
     }
 
     private void OnCloseButtonClicked(object sender, RoutedEventArgs e)
