@@ -5,6 +5,9 @@
     <Nullable>enable</Nullable>
     <UseWPF>true</UseWPF>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <Authors>Michel Michels</Authors>
+    <RepositoryUrl>https://github.com/MichelMichels/wpf-controls</RepositoryUrl>
+    <Version>0.9.1</Version>
   </PropertyGroup>
-
 </Project>
