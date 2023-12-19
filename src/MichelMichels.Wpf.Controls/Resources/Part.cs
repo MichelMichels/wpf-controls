@@ -10,4 +10,5 @@ internal static class Part
     internal const string RestoreButton = "PART_RestoreButton";
     internal const string CloseButton = "PART_CloseButton";
     internal const string WindowContent = "PART_WindowContent";
+    internal const string WindowBorder = "PART_WindowBorder";
 }

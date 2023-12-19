@@ -1,13 +1,15 @@
-﻿using MichelMichels.Wpf.Controls.Internal;
-using MichelMichels.Wpf.Controls.Resources;
+﻿using MichelMichels.Wpf.Controls.Resources;
 using System;
 using System.Windows;
+using System.Windows.Controls;
 using System.Windows.Documents;
 using System.Windows.Interop;
 using System.Windows.Shell;
 
 namespace MichelMichels.Wpf.Controls;
 
+[TemplatePart(Name = Part.WindowBorder, Type = typeof(Border))]
+[TemplatePart(Name = Part.WindowContent, Type = typeof(AdornerDecorator))]
 public class ChromeWindow : BaseWindow
 {
     // TODO: Minimizing animation gone: https://stackoverflow.com/a/21419172
@@ -83,7 +85,7 @@ public class ChromeWindow : BaseWindow
 
         if (PresentationSource.FromVisual(this) as HwndSource is { } hwndSource)
         {
-            hwndSource.AddHook(NativeMethods.HookProc);
+            //hwndSource.AddHook(NativeMethods.HookProc);
         }
     }
 
