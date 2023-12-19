@@ -1,7 +1,7 @@
 <a name="readme-top"></a>
 
 <!-- PROJECT SHIELDS -->
-[![Nuget](https://img.shields.io/nuget/v/MichelMichels.Controls)](https://www.nuget.org/packages/MichelMichels.Controls/)
+[![Nuget](https://img.shields.io/nuget/v/MichelMichels.Controls)](https://www.nuget.org/packages/MichelMichels.Controls/) [![Build](https://github.com/MichelMichels/wpf-controls/actions/workflows/dotnet-desktop.yml/badge.svg)](https://github.com/MichelMichels/wpf-controls/actions/workflows/dotnet-desktop.yml)
 
 <!-- PROJECT LOGO -->
 <br />
