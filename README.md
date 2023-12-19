@@ -66,10 +66,16 @@ Clone the repository, build and run one of the projects.
 
 This is a list of controls that are currently included in this library.
 
-| Name          | Description                                                                                                                                          |
-| ------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Placeholder   | This is a control to put in place when content is loaded afterwards, to setup some layout structure.                                                 |
-| AnimatedImage | This control uses a placeholder while loading in the image. After the image is loaded, the placeholder will disappear by using an opacity animation. |
+| Name             | Description                                                                                                                                          |
+| ---------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Placeholder      | This is a control to put in place when content is loaded afterwards, to setup some layout structure.                                                 |
+| PlaceholderImage | This control uses a placeholder while loading in the image. After the image is loaded, the placeholder will disappear by using an opacity animation. |
+| ChromeWindow     | Window with custom chrome.                                                                                                                           |
+| MinimizeButton   | Button for minimizing a Window.                                                                                                                      |
+| RestoreButton    | Button for restoring a Window.                                                                                                                       |
+| MaximizeButton   | Button for maximizing a Window.                                                                                                                      |
+| CloseButton      | Button for closing a Window.                                                                                                                         |
+| WindowControls   | Container for holding the buttons of a Window.                                                                                                       |
 
 
 <!-- CONTRIBUTING -->
