@@ -1,4 +1,4 @@
-﻿<Window
+﻿<wpf:ChromeWindow
     x:Class="MichelsMichels.Controls.Demo.MainWindow"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
@@ -10,8 +10,9 @@
     d:DataContext="{d:DesignInstance Type={x:Type local:MainViewModel}}"
     d:DesignHeight="1080"
     d:DesignWidth="1920"
+    ExtendsContentIntoTitleBar="True"
     SnapsToDevicePixels="True"
-    WindowState="Maximized"
+    Style="{StaticResource ChromeWindow.Windows11}"
     mc:Ignorable="d">
     <DockPanel>
         <Border Padding="16" DockPanel.Dock="Top">
@@ -57,7 +58,7 @@
 
                     <wpf:Placeholder Height="100" Margin="0,0,0,16" />
 
-                    <Grid Height="100">
+                    <Grid Height="100" Margin="0,0,0,32">
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition />
                             <ColumnDefinition Width="16" />
@@ -69,9 +70,180 @@
                         <wpf:Placeholder Grid.Column="0" Grid.ColumnSpan="3" />
                         <wpf:Placeholder Grid.Column="4" />
                     </Grid>
+
+                    <StackPanel Margin="0,0,0,32" Orientation="Horizontal">
+                        <StackPanel Margin="0,0,16,0">
+                            <TextBlock
+                                Margin="0,0,0,16"
+                                FontSize="18"
+                                Text="TitlebarButton" />
+                            <wpf:TitlebarButton Height="32" HorizontalAlignment="Left">
+                                <TextBlock Text="A" />
+                            </wpf:TitlebarButton>
+                        </StackPanel>
+                    </StackPanel>
+
+                    <TextBlock
+                        Margin="0,0,0,16"
+                        FontSize="18"
+                        Text="TextTitlebarButton" />
+                    <Grid Margin="0,0,0,32" ShowGridLines="True">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition />
+                            <ColumnDefinition />
+                            <ColumnDefinition />
+                            <ColumnDefinition />
+                            <ColumnDefinition />
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition />
+                            <RowDefinition />
+                            <RowDefinition />
+                            <RowDefinition />
+                        </Grid.RowDefinitions>
+
+                        <TextBlock
+                            Grid.Row="0"
+                            Grid.Column="1"
+                            Text="Minimize"
+                            TextAlignment="Center" />
+
+                        <TextBlock
+                            Grid.Row="0"
+                            Grid.Column="2"
+                            Text="Maximize"
+                            TextAlignment="Center" />
+
+                        <TextBlock
+                            Grid.Row="0"
+                            Grid.Column="3"
+                            Text="Restore"
+                            TextAlignment="Center" />
+
+                        <TextBlock
+                            Grid.Row="0"
+                            Grid.Column="4"
+                            Text="Close"
+                            TextAlignment="Center" />
+
+
+                        <TextBlock
+                            Grid.Row="1"
+                            Grid.Column="0"
+                            VerticalAlignment="Center"
+                            Text="Windows 10" />
+
+                        <wpf:MinimizeButton
+                            Grid.Row="1"
+                            Grid.Column="1"
+                            Height="32"
+                            Style="{StaticResource MinimizeButton.Windows10}" />
+
+                        <wpf:MaximizeButton
+                            Grid.Row="1"
+                            Grid.Column="2"
+                            Height="32"
+                            Style="{StaticResource MaximizeButton.Windows10}" />
+
+                        <wpf:RestoreButton
+                            Grid.Row="1"
+                            Grid.Column="3"
+                            Height="32"
+                            Style="{StaticResource RestoreButton.Windows10}" />
+
+                        <wpf:CloseButton
+                            Grid.Row="1"
+                            Grid.Column="4"
+                            Height="32"
+                            Style="{StaticResource CloseButton.Windows10}" />
+
+                        <TextBlock
+                            Grid.Row="2"
+                            Grid.Column="0"
+                            VerticalAlignment="Center"
+                            Text="Windows 11" />
+
+                        <wpf:MinimizeButton
+                            Grid.Row="2"
+                            Grid.Column="1"
+                            Height="32"
+                            Style="{StaticResource MinimizeButton.Windows11}" />
+
+                        <wpf:MaximizeButton
+                            Grid.Row="2"
+                            Grid.Column="2"
+                            Height="32"
+                            Style="{StaticResource MaximizeButton.Windows11}" />
+
+                        <wpf:RestoreButton
+                            Grid.Row="2"
+                            Grid.Column="3"
+                            Height="32"
+                            Style="{StaticResource RestoreButton.Windows11}" />
+
+                        <wpf:CloseButton
+                            Grid.Row="2"
+                            Grid.Column="4"
+                            Height="32"
+                            Style="{StaticResource CloseButton.Windows11}" />
+
+                        <TextBlock
+                            Grid.Row="3"
+                            Grid.Column="0"
+                            VerticalAlignment="Center"
+                            Text="macOS" />
+
+                        <wpf:MinimizeButton
+                            Grid.Row="3"
+                            Grid.Column="1"
+                            Height="32"
+                            Style="{StaticResource MinimizeButton.macOS}" />
+
+                        <wpf:MaximizeButton
+                            Grid.Row="3"
+                            Grid.Column="2"
+                            Height="32"
+                            Style="{StaticResource MaximizeButton.macOS}" />
+
+                        <wpf:RestoreButton
+                            Grid.Row="3"
+                            Grid.Column="3"
+                            Height="32"
+                            Style="{StaticResource RestoreButton.macOS}" />
+
+                        <wpf:CloseButton
+                            Grid.Row="3"
+                            Grid.Column="4"
+                            Height="32"
+                            Style="{StaticResource CloseButton.macOS}" />
+                    </Grid>
+
+                    <TextBlock
+                        Margin="0,0,0,16"
+                        FontSize="18"
+                        Text="WindowControls" />
+
+                    <StackPanel>
+                        <TextBlock Text="Windows 10" />
+                        <wpf:WindowControls
+                            Margin="0,0,8,8"
+                            HorizontalAlignment="Left"
+                            Style="{StaticResource WindowControls.Windows10}" />
+
+                        <TextBlock Text="Windows 11" />
+                        <wpf:WindowControls
+                            Margin="0,0,8,8"
+                            HorizontalAlignment="Left"
+                            Style="{StaticResource WindowControls.Windows11}" />
+
+                        <TextBlock Text="macOS" />
+                        <wpf:WindowControls
+                            Margin="0,0,8,8"
+                            HorizontalAlignment="Left"
+                            Style="{StaticResource WindowControls.macOS}" />
+                    </StackPanel>
                 </StackPanel>
             </Border>
-
         </ScrollViewer>
     </DockPanel>
-</Window>
+</wpf:ChromeWindow>

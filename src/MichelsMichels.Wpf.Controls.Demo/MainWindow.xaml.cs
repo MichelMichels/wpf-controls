@@ -1,16 +1,15 @@
-﻿using System.Windows;
+﻿using MichelMichels.Wpf.Controls;
 
-namespace MichelsMichels.Controls.Demo
+namespace MichelsMichels.Controls.Demo;
+
+/// <summary>
+/// Interaction logic for MainWindow.xaml
+/// </summary>
+public partial class MainWindow : ChromeWindow
 {
-    /// <summary>
-    /// Interaction logic for MainWindow.xaml
-    /// </summary>
-    public partial class MainWindow : Window
+    public MainWindow()
     {
-        public MainWindow()
-        {
-            InitializeComponent();
-            DataContext = new MainViewModel();
-        }
+        InitializeComponent();
+        DataContext = new MainViewModel();
     }
 }
