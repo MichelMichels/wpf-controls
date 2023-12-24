@@ -36,6 +36,8 @@
 
         <ControlTemplate.Triggers>
             <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Cursor" Value="Hand" />
+
                 <Trigger.EnterActions>
                     <BeginStoryboard>
                         <Storyboard>
@@ -92,11 +94,68 @@
             <Trigger Property="IsPressed" Value="True" />
         </ControlTemplate.Triggers>
     </ControlTemplate>
+    <ControlTemplate x:Key="TwoToneButtonTemplate" TargetType="{x:Type Button}">
+        <Grid>
+            <Grid
+                RenderOptions.EdgeMode="Aliased"
+                SnapsToDevicePixels="True"
+                UseLayoutRounding="True">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+                <Border
+                    x:Name="firstBackground"
+                    Grid.Column="0"
+                    Panel.ZIndex="-1"
+                    Background="#ADD8E6"
+                    Opacity="0.5" />
+                <Border
+                    x:Name="firstBorder"
+                    Grid.Column="0"
+                    BorderBrush="#ADD8E6"
+                    BorderThickness="4,4,0,4" />
+                <Border
+                    x:Name="secondBackground"
+                    Grid.Column="1"
+                    Panel.ZIndex="-1"
+                    Background="#F77481"
+                    Opacity="0.5" />
+                <Border
+                    x:Name="secondBorder"
+                    Grid.Column="1"
+                    BorderBrush="#F77481"
+                    BorderThickness="0,4,4,4" />
+            </Grid>
+            <ContentPresenter
+                x:Name="contentPresenter"
+                Margin="16,8"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center"
+                Focusable="False"
+                RecognizesAccessKey="True"
+                TextBlock.Foreground="{TemplateBinding Foreground}" />
+        </Grid>
 
+        <ControlTemplate.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Cursor" Value="Hand" />
+                <Setter TargetName="firstBackground" Property="Opacity" Value="1" />
+                <Setter TargetName="secondBackground" Property="Opacity" Value="1" />
+            </Trigger>
+            <Trigger Property="IsPressed" Value="True" />
+        </ControlTemplate.Triggers>
+    </ControlTemplate>
 
     <Style x:Key="ReproZamanButton" TargetType="Button">
         <Setter Property="Template" Value="{StaticResource ReproZamanButtonTemplate}" />
         <Setter Property="Foreground" Value="{StaticResource Button.Normal.Default.ForegroundBrush.ReproZamanBrush}" />
         <Setter Property="Background" Value="{StaticResource Button.Normal.Default.BackgroundBrush.ReproZamanBrush}" />
     </Style>
+    <Style x:Key="TwoToneButton" TargetType="Button">
+        <Setter Property="Template" Value="{StaticResource TwoToneButtonTemplate}" />
+        <Setter Property="Foreground" Value="Black" />
+
+    </Style>
+
 </ResourceDictionary>

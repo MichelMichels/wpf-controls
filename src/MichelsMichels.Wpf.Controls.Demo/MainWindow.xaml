@@ -8,7 +8,7 @@
     xmlns:wpf="clr-namespace:MichelMichels.Wpf.Controls;assembly=MichelMichels.Wpf.Controls"
     Title="MainWindow"
     d:DataContext="{d:DesignInstance Type={x:Type local:MainViewModel}}"
-    d:DesignHeight="1080"
+    d:DesignHeight="4096"
     d:DesignWidth="1920"
     ExtendsContentIntoTitleBar="True"
     SnapsToDevicePixels="True"
@@ -223,7 +223,7 @@
                         FontSize="18"
                         Text="WindowControls" />
 
-                    <StackPanel>
+                    <StackPanel Margin="0,0,0,32">
                         <TextBlock Text="Windows 10" />
                         <wpf:WindowControls
                             Margin="0,0,8,8"
@@ -244,11 +244,21 @@
                     </StackPanel>
 
                     <StackPanel>
-                        <TextBlock Text="Buttons" />
+                        <TextBlock
+                            Margin="0,0,0,16"
+                            FontSize="18"
+                            Text="Buttons" />
 
                         <WrapPanel>
-                            <Button Content="Meer over ons" Style="{StaticResource ReproZamanButton}" />
+                            <Button
+                                Margin="0,0,32,32"
+                                Content="More info"
+                                Style="{StaticResource ReproZamanButton}" />
 
+                            <Button
+                                Margin="0,0,32,32"
+                                Content="More info"
+                                Style="{StaticResource TwoToneButton}" />
                         </WrapPanel>
                     </StackPanel>
                 </StackPanel>
