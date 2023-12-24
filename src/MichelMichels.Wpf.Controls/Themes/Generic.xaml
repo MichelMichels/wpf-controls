@@ -13,6 +13,7 @@
         <ResourceDictionary Source="pack://application:,,,/MichelMichels.Wpf.Controls;component/Themes/CloseButton.xaml" />
         <ResourceDictionary Source="pack://application:,,,/MichelMichels.Wpf.Controls;component/Themes/WindowControls.xaml" />
         <ResourceDictionary Source="pack://application:,,,/MichelMichels.Wpf.Controls;component/Themes/ChromeWindow.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/MichelMichels.Wpf.Controls;component/Themes/Buttons.xaml" />
     </ResourceDictionary.MergedDictionaries>
 
     <Style BasedOn="{StaticResource BasePlaceholder}" TargetType="local:Placeholder" />

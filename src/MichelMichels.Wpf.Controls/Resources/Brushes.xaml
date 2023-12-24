@@ -7,6 +7,11 @@
     <SolidColorBrush x:Key="Button.Pressed.Close.BackgroundBrush" Color="#F1707B" />
     <SolidColorBrush x:Key="Button.Pressed.Default.BackgroundBrush" Color="#44000000" />
     <SolidColorBrush x:Key="Window.BorderBrush" Color="LightGray" />
+    <SolidColorBrush x:Key="Button.Normal.Default.ForegroundBrush.ReproZamanBrush" Color="#24d194" />
+    <SolidColorBrush
+        x:Key="Button.Normal.Default.BackgroundBrush.ReproZamanBrush"
+        Opacity="0.5"
+        Color="#24d194" />
 
     <!--  macOS  -->
     <SolidColorBrush x:Key="Button.Normal.Minimize.ForegroundBrush.macOS" Color="#FDBC40" />

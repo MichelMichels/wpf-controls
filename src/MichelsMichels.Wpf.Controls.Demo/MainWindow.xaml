@@ -242,6 +242,15 @@
                             HorizontalAlignment="Left"
                             Style="{StaticResource WindowControls.macOS}" />
                     </StackPanel>
+
+                    <StackPanel>
+                        <TextBlock Text="Buttons" />
+
+                        <WrapPanel>
+                            <Button Content="Meer over ons" Style="{StaticResource ReproZamanButton}" />
+
+                        </WrapPanel>
+                    </StackPanel>
                 </StackPanel>
             </Border>
         </ScrollViewer>
